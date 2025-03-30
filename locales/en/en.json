@@ -117,6 +117,25 @@
     "subTitle": "The Latest from iSTEP",
     "blogs": [
       {
+        "title": "The Course Rooms Are Ready",
+        "text": "and tomorrow, Monday, we will start with the two courses. We expect around 10 participants per course.",
+        "moreText": "Read More",
+        "date": "2025.02.13",
+        "texts": [
+          "Very spontaneously, we received approval to use two classrooms again in the school building opposite the A2B Center in Elbasan. So, this afternoon, we had to prepare the course rooms accordingly: setting up and wiring the laptops, setting up the projector, and once again, a bedsheet will serve as the screen.",
+          "We are excited to see who will participate in the course. The young people we have been working with for over 1.5 years are thrilled that we are back on-site. We really hope to welcome some new participants as well. There are always surprises—today, suddenly, a cow appeared in front of the school building, seemingly lost but finding a refreshing treat on the street.",
+          "As I write this, I am waiting for the four team members who are traveling by car and will surely be looking forward to something to eat."
+        ],
+        "images": [
+          "/blog/17_course_rooms_ready/Bild_1.jpg",
+          "/blog/17_course_rooms_ready/Bild_2.jpg",
+          "/blog/17_course_rooms_ready/Bild_5.jpg",
+          "/blog/17_course_rooms_ready/Bild_3.jpg",
+          "/blog/17_course_rooms_ready/Bild_4.jpg"
+        ],
+        "pdf": {}
+      },
+      {
         "title": "Annual report 2024",
         "text": "The time has come and we can present the 2024 Annual Report. We are very grateful for how the past year went. Of course, there were also challenges, which is part and parcel of the job. Overall, however, we are very satisfied with what we were able to achieve.",
         "moreText": "Read More",

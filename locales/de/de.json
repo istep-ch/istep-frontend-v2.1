@@ -116,6 +116,26 @@
 
     "blogs": [
       {
+        "title": "Die Kursräume sind bereit",
+        "text": "und morgen Montag beginnen wir mit den 2 Kursen. Wir rechnen pro Kurs mit rund 10 Teilnehmern.",
+        "moreText": "Mehr Lesen",
+        "date": "2025.03.31",
+        "texts": [
+          "Sehr kurzfristig erhielten wir die Bewilligung, dass wir wieder im Schulhaus, gegenüber des A2B-Centers in Elbasan, 2 Schulzimmer benutzen dürfen. So hiess es heute Nachmittag, die Kursräume entsprechend vorzubereiten. Verteilen und verkabeln der Laptops, den Beamer einrichten und als Leinwand wird wieder ein Leintuch montiert.",
+          "Wir sind gespannt, wer alles am Kurs teilnehmen wird. Die Jugendlichen, mit denen wir bereits seit über 1.5 Jahren zusammenarbeiten, freuen sich riesig, dass wir wieder vor Ort sind. Wir hoffen sehr, dass wir auch einige neue Teilnehmer begrüssen dürfen. Überraschungen gibt es immer mal wieder, denn plötzlich tauchte heute vor dem Schulhaus eine Kuh auf, die sich wohl verirrt hat, aber auf der Strasse eine willkommene Erfrischung fand.",
+          "Während ich das schreibe, warte ich auf die 4 Teammitglieder, die per Auto anreisen und sich auf etwas zu Essen sicher sehr freuen."
+        ],
+
+        "images": [
+          "/blog/17_course_rooms_ready/Bild_1.jpg",
+          "/blog/17_course_rooms_ready/Bild_2.jpg",
+          "/blog/17_course_rooms_ready/Bild_5.jpg",
+          "/blog/17_course_rooms_ready/Bild_3.jpg",
+          "/blog/17_course_rooms_ready/Bild_4.jpg"
+        ],
+        "pdf": {}
+      },
+      {
         "title": "Jahresbericht 2024",
         "text": "Es ist so weit und wir können den Jahresbericht 2024 präsentieren. Wir sind sehr dankbar, wie das letzte Jahr gelaufen ist. Klar, gab es auch Herausforderungen, was ja bekanntlich dazugehört. Gesamthaft gesehen sind wir jedoch sehr zufrieden damit, was wir umsetzen konnten.",
         "moreText": "Mehr Lesen",

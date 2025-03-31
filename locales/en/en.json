@@ -117,10 +117,34 @@
     "subTitle": "The Latest from iSTEP",
     "blogs": [
       {
+        "title": "A Successful Start!",
+        "text": "We arrived at the school building on time to make the final preparations in the two course rooms.",
+        "moreText": "Read More",
+        "date": "2025.03.31",
+        "texts": [
+          "The laptops, name tags, USB sticks, and other materials are ready. The screens for projection with the beamer are also set up. We're ready to go.",
+          "Right on time at 9:00 AM, the young participants arrive with eager anticipation. After a welcome and a review of the iSTEP guidelines (which consist of five fundamental behavioral rules), the week's course topic is introduced.",
+          "It doesn’t take long before both groups are fully engaged in their topics. The creative group begins with the first steps of SCRATCH programming, while the IT group focuses intensely on a desktop computer they brought in. From the connectors to the CPU, everything is discussed and taken apart piece by piece.",
+          "After a break with lunch, games, and fun, the afternoon session continues, which we conclude at 3:00 PM with a tired but satisfied team."
+        ],
+        "images": [
+          "/blog/18_good_start/Bild_1.jpg",
+          "/blog/18_good_start/Bild_2.jpg",
+          "/blog/18_good_start/Bild_3.jpg",
+          "/blog/18_good_start/Bild_4.jpg",
+          "/blog/18_good_start/Bild_5.jpg",
+          "/blog/18_good_start/Bild_6.jpg",
+          "/blog/18_good_start/Bild_7.jpg",
+          "/blog/18_good_start/Bild_8.jpg",
+          "/blog/18_good_start/Bild_9.jpg"
+        ],
+        "pdf": {}
+      },
+      {
         "title": "The Course Rooms Are Ready",
         "text": "and tomorrow, Monday, we will start with the two courses. We expect around 10 participants per course.",
         "moreText": "Read More",
-        "date": "2025.02.13",
+        "date": "2025.03.30",
         "texts": [
           "Very spontaneously, we received approval to use two classrooms again in the school building opposite the A2B Center in Elbasan. So, this afternoon, we had to prepare the course rooms accordingly: setting up and wiring the laptops, setting up the projector, and once again, a bedsheet will serve as the screen.",
           "We are excited to see who will participate in the course. The young people we have been working with for over 1.5 years are thrilled that we are back on-site. We really hope to welcome some new participants as well. There are always surprises—today, suddenly, a cow appeared in front of the school building, seemingly lost but finding a refreshing treat on the street.",

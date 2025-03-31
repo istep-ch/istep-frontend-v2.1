@@ -49,6 +49,15 @@ export default async function RootLayout({
             <Footer lng={locale} />
           </Suspense>
         </NextIntlClientProvider>
+        <script
+          defer
+          data-domain="istep.ch"
+          src="https://istep-analytics.bbmit-service.ch/js/script.js"
+        ></script>
+        <script>
+          window.plausible = window.plausible || function(){" "}
+          {(window.plausible.q = window.plausible.q || []).push(arguments)}
+        </script>
       </body>
     </html>
   );

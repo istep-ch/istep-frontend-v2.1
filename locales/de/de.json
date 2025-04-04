@@ -116,6 +116,32 @@
 
     "blogs": [
       {
+        "title": "Spielerisch programmieren lernen mit Scratch",
+        "text": "Mit bunten Blöcken und kreativen Ideen haben wir diese Woche Kindern in Elbasan einen Einstieg in die Welt des Programmierens ermöglicht – eine Erfahrung voller Neugier und Aha-Momente!",
+        "moreText": "Mehr Lesen",
+        "date": "2025.04.04",
+        "texts": [
+          "Für mich war es das erste Mal, dass ich mit iStep in Elbasan dabei sein durfte, während die anderen vom Team bereits Erfahrung hatten. Ich war gespannt, was mich erwarten würde – neue Menschen, eine neue Umgebung und die Möglichkeit, mit jungen Leuten zu arbeiten. Vom ersten Moment an spürte ich die offene und herzliche Atmosphäre, sowohl im Team als auch bei den Kindern und Jugendlichen, die an unserem Scratch-Kurs teilnahmen.",
+          "Wir richteten uns im Schulhaus ein und starteten direkt mit dem Workshop. Maxim und ich erklärten die Theorie, mithilfe unseres Scratchguides, bevor wir gemeinsam mit der ganzen Gruppe an interaktiven Aufgaben arbeiteten. Ein Highlight war das Lösen von kleinen Spielen mit klaren Anforderungen – ein strukturiertes Vorgehen, das half, schrittweise besser zu verstehen, wie Programmieren funktioniert.",
+          "Es war beeindruckend zu sehen, wie schnell die Teilnehmer Konzepte aufnahmen und ihre eigenen Ideen umsetzten. Besonders die Begeisterung in ihren Augen, wenn ein selbst programmiertes Spiel funktionierte, war ein unglaubliches Gefühl!",
+          "Gleich neben der Schule befindet sich das A2B Center – ein Ort, an dem Kinder essen gehen, Hilfe bei den Schulaufgaben erhalten und einfach Zeit miteinander verbringen können. Ich fand es besonders schön zu sehen, wie viele Kinder diesen Ort als ihr zweites Zuhause betrachten und sich dort wohlfühlen. A2B ist eine wichtige Anlaufstelle, die vielen Jugendlichen Stabilität und Unterstützung bietet.",
+          "Nach unseren intensiven Theorie- und Praxisblöcken, ergänzt durch Kahoot-Quizrunden, gingen wir oft mit dem iStep-Team ins Restaurant. An einem Tag unternahmen Maxim, Petre und ich sogar eine kleine Wanderung, wodurch wir die Kultur, Lebensweise und beeindruckende Natur Albaniens noch besser kennenlernen konnten.",
+          "Besonders beeindruckt hat mich Alketa, die Leiterin von A2B. Sie wurde in Albanien geboren und hat sowohl den Kommunismus als auch dessen Sturz miterlebt. Seit vielen Jahren widmet sie ihr Leben dem Helfen von Kindern und Jugendlichen, die Unterstützung brauchen. Ihre Geschichte hat mich sehr bewegt, und es ist inspirierend zu sehen, wie sie mit Leidenschaft und Engagement so vielen jungen Menschen eine Perspektive gibt.",
+          "Die Begeisterung der Kinder während unseres Scratch-Kurses war ansteckend. Es war grossartig zu sehen, wie sie mit Neugier und Freude programmierten, Probleme lösten und dabei ihre eigenen kreativen Ideen entwickelten. Diese Woche war für mich eine besondere Erfahrung – ich bin dankbar, ein Teil davon gewesen zu sein und hoffe, dass wir mit unserer Arbeit einen kleinen Beitrag für ihre Zukunft leisten konnten.",
+          "Autor: Daniel Jancar"
+        ],
+
+        "images": [
+          "/blog/19_Learn_to_programme_in_a_playful_way_with_Scratch/Bild_1.jpg",
+          "/blog/19_Learn_to_programme_in_a_playful_way_with_Scratch/Bild_2.jpg",
+          "/blog/19_Learn_to_programme_in_a_playful_way_with_Scratch/Bild_3.jpg",
+          "/blog/19_Learn_to_programme_in_a_playful_way_with_Scratch/Bild_4.jpg",
+          "/blog/19_Learn_to_programme_in_a_playful_way_with_Scratch/Bild_5.jpg",
+          "/blog/19_Learn_to_programme_in_a_playful_way_with_Scratch/Bild_6.jpg"
+        ],
+        "pdf": {}
+      },
+      {
         "title": "Ein erfolgreicher Start!",
         "text": "Wir sind rechtzeitig im Schulgebäude, um die letzten Vorbereitungen in den 2 Kursräumen zu treffen.",
         "moreText": "Mehr Lesen",

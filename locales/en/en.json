@@ -117,6 +117,31 @@
     "subTitle": "The Latest from iSTEP",
     "blogs": [
       {
+        "title": "Learning to Program Playfully with Scratch",
+        "text": "With colorful blocks and creative ideas, we introduced children in Elbasan to the world of programming this week – an experience full of curiosity and 'aha' moments!",
+        "moreText": "Read More",
+        "date": "2025.04.04",
+        "texts": [
+          "For me, it was the first time I had the chance to be part of iStep in Elbasan, while the others on the team already had experience. I was curious about what to expect – new people, a new environment, and the opportunity to work with young people. From the very first moment, I felt the open and warm atmosphere, both within the team and among the children and teenagers who took part in our Scratch course.",
+          "We set up in the school building and started the workshop right away. Maxim and I explained the theory using our Scratch guide before working on interactive tasks together with the whole group. One highlight was solving small games with clear requirements – a structured approach that helped us gradually understand how programming works.",
+          "It was impressive to see how quickly the participants grasped concepts and implemented their own ideas. Especially the excitement in their eyes when a self-programmed game worked – that was an incredible feeling!",
+          "Right next to the school is the A2B Center – a place where children can have meals, get help with schoolwork, and simply spend time together. I found it especially heartwarming to see how many children consider this place their second home and feel comfortable there. A2B is an important hub that provides many young people with stability and support.",
+          "After our intense theory and practice sessions, complemented by Kahoot quiz rounds, we often went to a restaurant with the iStep team. One day, Maxim, Petre, and I even went on a small hike, which gave us a better understanding of Albanian culture, lifestyle, and its impressive nature.",
+          "I was especially impressed by Alketa, the head of A2B. She was born in Albania and experienced both communism and its fall. For many years, she has dedicated her life to helping children and teenagers in need of support. Her story moved me deeply, and it's inspiring to see how she gives so many young people a perspective with passion and commitment.",
+          "The children's enthusiasm during our Scratch course was contagious. It was wonderful to see them programming with curiosity and joy, solving problems, and developing their own creative ideas. This week was a special experience for me – I'm grateful to have been a part of it and hope that our work made a small contribution to their future.",
+          "Author: Daniel Jancar"
+        ],
+        "images": [
+          "/blog/19_Learn_to_programme_in_a_playful_way_with_Scratch/Bild_1.jpg",
+          "/blog/19_Learn_to_programme_in_a_playful_way_with_Scratch/Bild_2.jpg",
+          "/blog/19_Learn_to_programme_in_a_playful_way_with_Scratch/Bild_3.jpg",
+          "/blog/19_Learn_to_programme_in_a_playful_way_with_Scratch/Bild_4.jpg",
+          "/blog/19_Learn_to_programme_in_a_playful_way_with_Scratch/Bild_5.jpg",
+          "/blog/19_Learn_to_programme_in_a_playful_way_with_Scratch/Bild_6.jpg"
+        ],
+        "pdf": {}
+      },
+      {
         "title": "A Successful Start!",
         "text": "We arrived at the school building on time to make the final preparations in the two course rooms.",
         "moreText": "Read More",

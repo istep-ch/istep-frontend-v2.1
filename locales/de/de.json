@@ -116,6 +116,33 @@
 
     "blogs": [
       {
+        "title": "Die Einsatztruppe Librazhd findet zusammen",
+        "text": "Am Samstag, 5. April 2025, reist ein Teil der Elbasan-Einsatzgruppe ab, während für die Leiterinnen des Nähkurses Hanni und Esther der Transfer in die Kleinstadt Librazhd ansteht. Adrian macht gemeinsam mit Eri, einem der lokalen Helfer aus Librazhd, einen Schlenker zurück nach Tirana, um Marc und Olivia vom Flughafen abzuholen. Die beiden kamen mit einem frühen Flug, sodass die Gruppe fast pünktlich aufs Zmittag am neuen Einsatzort zusammenkommt.",
+        "moreText": "Mehr Lesen",
+        "date": "2025.04.07",
+        "texts": [
+          "Am Sonntagmorgen lädt die Sonne zum Spazieren ein. Das bergige Umland um das östlich gelegenen Librazhd sorgt für kühle Winde und schnelle Wetterwechsel, deshalb packen wir die Gelegenheit beim Schopf. Wir folgen dem Fluss Shkumbin und entdecken unterwegs das Feuerwehrlokal. Beim Fotografieren der alten Löschfahrzeuge kommen wir mit einem Feuerwehrmann ins Gespräch. Er erklärt uns, dass sie mit den beiden in die Jahre gekommenen Fahrzeugen, einen Radius von über 40 km2 abdecken. Dabei darf wohl erwähnt werden, dass der 80-jährige Oldtimer, der hier noch aktiv Einsätze fährt, in der Schweiz noch allenfalls für Feuerwehrfeste aus der Garage geholt würde. Wenn es in den Bergen oben brennt, muss die Mannschaft auch mal zu Fuss ausrücken, weil es entweder keine Strassen gibt oder sie nicht mit Lastwagen befahrbar sind.",
+          "Der Monatslohn für Feuerwehrleute liegt hier gerade mal bei 500 Euro, was selbst im vergleich zu anderen albanischen Staatsangestellten relativ wenig ist. Der Feuerwehrmann erklärt, dass das Augenmerk der Regierung nicht unbedingt auf den Feuerwehren des Landes liege. Daher mangele es grossflächig an Ausrüstung aber auch an Ausbildung. ",
+          "Gleich hinter dem Feuerwehrmagazin befindet sich der verlassene Bahnhof aus der Zeit des kommunistischen Regimes. Das aufgegebene Schienennetz ist heute von Vegetation überwuchert – Züge fahren hier schon lange keine mehr. Auch das verwitterte Bahnhofgebäude wird langsam von der Natur zurückerobert. Das ehemalige Zugdepot ist bereits im Zerfall begriffen und gemahnt an die Kulisse eines postapokalyptischen Filmes. Nach dem Ende der Diktatur 1991 und mit der Öffnung des Landes gelangten breitflächig Autos nach Albanien und wurden zum Statussymbol. Die Nachfrage nach Zugreisen ging drastisch zurück, der Verkehr wurde auf die Strasse verlegt und Investitionen ins Schienennetz kamen zum Erliegen, bis schliesslich fast alle Bahnlinien geschlossen wurden.",
+          "Am Montagmorgen begrüssen uns die Hügelkuppen mit einem weissen Schneehäubchen. In der Nacht fielen die Temperaturen unter null, entsprechend eisig ist es in den unbeheizten Kursräumen. Im Raum für die IT-Kurse lässt sich ein Heizstrahler installieren. Leider ist die Elektroheizung im vorderen Bereich nicht mehr funktionstüchtig. So vermisst die eine oder andere Helferin schon mal die Handschuhe während den Vorbereitungen für den Nähkurs. Doch trotz der kalten Finger kann selbst eine beim Transport leicht beschädigte Nähmaschine wieder geflickt werden.",
+          "Am Nachmittag ist es dann so weit: Kursstart in Librazhd. Pünktlich um zwei Uhr treffen die rund zehn Kinder für die Programmiereinführung mit Scratch ein. Die Altersspanne reicht von 7 bis 14 Jahren und ist dementsprechend gross. Doch selbst die Jüngsten können mithilfe der videogestützten Tutorials ihr erstes kleines Computerspiel realisieren.",
+          "Auf die Scratch-Stunde folgt die Einführung in die Webentwicklung für bereits etwas fortgeschrittene Kinder und Jugendliche. Der Unterricht folgt einem Selbststudiumskurs für HTML. Der selbstgesteuerte Lernansatz des Kurses ist den Teilnehmenden noch nicht vertraut, doch nach ein paar Ermunterungen beginnen die ersten bereits fleissig mit dem Lösen der praktischen Übungen.",
+          "Parallel dazu findet im Zimmer nebenan der Nähkurs statt. Vier Teilnehmende lernen unter dem geschäftigen Rattern der Nähmaschinen, wie eine gerade Naht gelingt. Am Ende der des ersten Kurstages können bereits Erfolge gefeiert werden: Stolz nehmen die Teilnehmerinnen ihr selbstgenähtes Etui mit nachhause."
+        ],
+
+        "images": [
+          "/blog/20_The_Librazhd_task_force_comes_together/Bild_1.jpg",
+          "/blog/20_The_Librazhd_task_force_comes_together/Bild_2.jpg",
+          "/blog/20_The_Librazhd_task_force_comes_together/Bild_3.jpg",
+          "/blog/20_The_Librazhd_task_force_comes_together/Bild_4.jpg",
+          "/blog/20_The_Librazhd_task_force_comes_together/Bild_5.jpg",
+          "/blog/20_The_Librazhd_task_force_comes_together/Bild_6.jpg",
+          "/blog/20_The_Librazhd_task_force_comes_together/Bild_8.jpg",
+          "/blog/20_The_Librazhd_task_force_comes_together/Bild_7.jpg"
+        ],
+        "pdf": {}
+      },
+      {
         "title": "Spielerisch programmieren lernen mit Scratch",
         "text": "Mit bunten Blöcken und kreativen Ideen haben wir diese Woche Kindern in Elbasan einen Einstieg in die Welt des Programmierens ermöglicht – eine Erfahrung voller Neugier und Aha-Momente!",
         "moreText": "Mehr Lesen",

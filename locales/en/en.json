@@ -117,6 +117,32 @@
     "subTitle": "The Latest from iSTEP",
     "blogs": [
       {
+        "title": "The Librazhd Task Force Comes Together",
+        "text": "On Saturday, April 5, 2025, part of the Elbasan task group departs, while the transfer to the small town of Librazhd is scheduled for the sewing course leaders Hanni and Esther. Adrian takes a detour back to Tirana with Eri, one of the local helpers from Librazhd, to pick up Marc and Olivia from the airport. The two arrive on an early flight, so the group almost meets on time for lunch at the new project location.",
+        "moreText": "Read More",
+        "date": "2025.04.07",
+        "texts": [
+          "On Sunday morning, the sun invites us out for a walk. The mountainous surroundings of Librazhd, located in the east, bring cool winds and quick weather changes, so we seize the opportunity. We follow the Shkumbin River and come across the local fire station. While taking pictures of the old fire engines, we strike up a conversation with a firefighter. He explains that with their two aging vehicles, they cover an area of over 40 km². It's worth noting that the 80-year-old vintage truck, which is still in active use here, would likely only be brought out for festivals in Switzerland. When fires break out in the mountains, the crew sometimes has to respond on foot, as either there are no roads or they are impassable for trucks.",
+          "Firefighters here earn just 500 euros a month, which is relatively low even compared to other Albanian public sector employees. The firefighter explains that the government’s focus is not particularly on the country's fire services. As a result, there's a widespread lack of equipment and training.",
+          "Right behind the fire station is the abandoned train station from the communist era. The disused railway network is now overgrown with vegetation – trains haven't run here in a long time. The weathered station building is slowly being reclaimed by nature. The former train depot is already falling apart and resembles the set of a post-apocalyptic film. After the dictatorship ended in 1991 and the country opened up, cars flooded into Albania and became status symbols. The demand for train travel dropped sharply, traffic shifted to roads, and investments in the railway network came to a halt until almost all train lines were eventually shut down.",
+          "On Monday morning, the hilltops greet us with a white dusting of snow. Overnight, temperatures dropped below freezing, making the unheated classrooms quite chilly. A space heater can be installed in the IT course room. Unfortunately, the electric heater at the front is no longer functional. So some helpers miss their gloves while preparing for the sewing course. Despite the cold fingers, even a slightly damaged sewing machine can be repaired.",
+          "In the afternoon, the time has come: the courses in Librazhd begin. Right at two o'clock, around ten children arrive for the introductory programming class with Scratch. The age range is quite broad, from 7 to 14 years old. But even the youngest manage to create their first small computer game with the help of video tutorials.",
+          "After the Scratch class comes the introduction to web development for children and teenagers who are a bit more advanced. The class follows a self-study course in HTML. The participants aren't yet used to this self-directed learning approach, but after a few words of encouragement, the first ones start eagerly working through the practical exercises.",
+          "Meanwhile, in the room next door, the sewing course is taking place. Four participants learn how to sew a straight seam to the busy hum of sewing machines. By the end of the first course day, there are already successes to celebrate: proudly, the participants take home their self-made pencil cases."
+        ],
+        "images": [
+          "/blog/20_The_Librazhd_task_force_comes_together/Bild_1.jpg",
+          "/blog/20_The_Librazhd_task_force_comes_together/Bild_2.jpg",
+          "/blog/20_The_Librazhd_task_force_comes_together/Bild_3.jpg",
+          "/blog/20_The_Librazhd_task_force_comes_together/Bild_4.jpg",
+          "/blog/20_The_Librazhd_task_force_comes_together/Bild_5.jpg",
+          "/blog/20_The_Librazhd_task_force_comes_together/Bild_6.jpg",
+          "/blog/20_The_Librazhd_task_force_comes_together/Bild_8.jpg",
+          "/blog/20_The_Librazhd_task_force_comes_together/Bild_7.jpg"
+        ],
+        "pdf": {}
+      },
+      {
         "title": "Learning to Program Playfully with Scratch",
         "text": "With colorful blocks and creative ideas, we introduced children in Elbasan to the world of programming this week – an experience full of curiosity and 'aha' moments!",
         "moreText": "Read More",

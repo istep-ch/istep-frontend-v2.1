@@ -53,6 +53,9 @@ export default async function detailPage({
               <p className="text-white text-h-xs md:text-h-sm mt-4 mb-4 md:text-left text-center font-palanquin !font-thin">
                 {translation.Blog.blogs[id].text}
               </p>
+              <p className="text-white text-p-sm  mt-4 mb-4 md:text-left text-center font-palanquin !font-bold">
+                {translation.Blog.blogs[id].date}
+              </p>
             </div>
           </div>
           <div className="container mx-auto py-12 md:mt-12 lg:px-4">

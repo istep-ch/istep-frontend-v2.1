@@ -5,6 +5,7 @@ import Link from "next/link";
 interface BlogTeaserSmallProps {
   title: string;
   text: string;
+  date: string;
   moreText: string;
   idx: number;
   image: string;
@@ -14,6 +15,7 @@ interface BlogTeaserSmallProps {
 export default function blogTeaserSmall({
   title,
   text,
+  date,
   moreText,
   image,
   idx,
@@ -68,6 +70,7 @@ export default function blogTeaserSmall({
             />
             <p className="ml-4">{textBlog}</p>
           </div>
+          <p className="ml-5 mt-1 font-bold">{date}</p>
           <Link href={`/${lng}/blog/${idx}`}>
             <button
               type="button"

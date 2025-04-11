@@ -21,9 +21,14 @@ export default async function blogPreview({ lng }: any) {
               {translation.Blog.blogs[0].title}
             </h3>
             <p
-              className={`text-p-sm md:text-p-lg text-darkblue font-thin w-full md:w-4/5 mb-2 md:mb-4`}
+              className={`text-p-sm md:text-p-lg text-darkblue font-thin w-full md:w-4/5 mb-1 md:mb-2`}
             >
               {translation.Blog.blogs[0].text}
+            </p>
+            <p
+              className={`text-p-sm md:text-p-sm text-darkblue !font-bold w-full md:w-4/5 mb-2 md:mb-4`}
+            >
+              {translation.Blog.blogs[0].date}
             </p>
             <div className="flex items-center cursor-pointer">
               <hr className="h-0.5 my-4 w-4 border-0 dark:bg-darkblue mr-2" />

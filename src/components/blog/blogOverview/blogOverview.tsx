@@ -15,6 +15,7 @@ export default async function coursesOverview({ lng }: projectProps) {
     <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
       {translation.Blog.blogs.slice(1).map((blog: any, index: number) => (
         <BlogTeaserSmall
+          date={blog.date}
           key={index}
           title={blog.title}
           text={blog.text}

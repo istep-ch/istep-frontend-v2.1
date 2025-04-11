@@ -1,7 +1,0 @@
-3:I[9275,[],""]
-4:I[1343,[],""]
-5:I[231,["231","static/chunks/231-ccf309f095efa052.js","160","static/chunks/app/not-found-2ddc894419b8ab96.js"],""]
-0:["SVGXxu9Vuw-IieE-8ZcKz",[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],["",{"children":["__PAGE__",{},[["$L1","$L2"],null],null]},[["$","html",null,{"lang":"en","children":["$","body",null,{"children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","div",null,{"className":"flex flex-col items-center justify-center h-screen font-palanquin bg-darkblue","children":[["$","h1",null,{"className":"text-h-md text-white","children":"Not found – 404!"}],["$","div",null,{"className":"bg-white p-4 rounded-md text-darkblue font-bold text-p-lg mt-4","children":["$","$L5",null,{"href":"/","children":"Go back to Home"}]}]]}],"notFoundStyles":[],"styles":null}]}]}],null],null],[null,"$L6"]]]]
-2:E{"digest":"NEXT_REDIRECT;replace;/de;307;"}
-6:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","link","2",{"rel":"icon","href":"/favicon.ico","type":"image/x-icon","sizes":"16x16"}]]
-1:null

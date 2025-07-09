@@ -955,6 +955,22 @@
   },
   "Projects": [
     {
+      "title": "Digital Literacy für Flüchtlinge",
+      "teaser": "iSTEP unterstützt ein Pilotprojekt von Powercoders, das in der Kollektivunterkunft Tiefenau in Bern durchgeführt wird. In acht Kursmodulen lernen die Asylsuchenden die Grundlagen des digitalen Alltags. Die Themen reichen von Verwendung des Internets über E-Mailkommunikation bis hin zu Jobsuche und Onlineinterviews und sollen den Teilnehmenden das notwendige Werkzeug mitgeben, um sich in unserer digitalisierten Gesellschaft integrieren zu können.",
+      "moreText": "mehr Lesen",
+      "link": "/digitalLiteracy",
+      "image": "/projects/digitalLiteracy/digitalLiteracy.jpg",
+      "details": {
+        "theLocation": "",
+        "theLocationText": "",
+        "theLocationImage": "/projects/digitalLiteracy/digitalLiteracy_1.jpg",
+        "whatWeDo": "",
+        "whatWeDoText": "",
+        "whatWeDoText2": "",
+        "whatWeDoImage": "/projects/digitalLiteracy/digitalLiteracy_2.jpg"
+      }
+    },
+    {
       "title": "Lezha",
       "teaser": "In der Kleinstadt Lezha im Nordwesten Albaniens arbeitet iSTEP mit den lokal tätigen Venerini Sisters zusammen. Wir ergänzen die Bildungsangebote an der von den Venerini Sisters geleiteten High School mit zusätzlichen Informatikvertiefungskursen und unterstützen die Lehrkräfte im IT-Themenfeld. ",
       "moreText": "mehr Lesen",

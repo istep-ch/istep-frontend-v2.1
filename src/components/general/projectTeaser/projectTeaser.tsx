@@ -36,9 +36,9 @@ const ProjectTeaser = ({ project, idx }: { project: any; idx: number }) => {
           className="rounded-t-3xl max-h-96 h-full w-full object-cover"
         />
         <div
-          className={`bg-gradient-to-t ${bgGradient}  h-24 absolute bottom-0 w-full`}
+          className={`bg-gradient-to-t ${bgGradient} max-h-36 absolute bottom-0 w-full`}
         >
-          <h4 className="text-white text-h-md md:text-h-l font-palanquin mt-10 md:mt-4 ml-10 md:font-normal">
+          <h4 className="text-white text-h-sm md:text-h-sm lg:text-h-md font-palanquin mt-10 md:mt-4 ml-10 md:font-normal pb-2">
             {project.title}
           </h4>
         </div>

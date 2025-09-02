@@ -1,8 +1,11 @@
+"use client";
 import Image from "next/image";
 import ScrollDown from "@/components/general/scrollDown/scrollDown";
 import { unstable_setRequestLocale } from "next-intl/server";
+import { useQuery } from "@apollo/client";
+import { gql } from "@apollo/client";
 
-export function generateStaticParams() {
+/*export function generateStaticParams() {
   const locales = ["de", "en"];
   const idCount = 10;
 
@@ -15,13 +18,30 @@ export function generateStaticParams() {
   });
 
   return result;
-}
+}*/
+const ABOUT_US_QUERY = gql`
+  query AllAboutUs($language: String!) {
+    allAboutUs(where: { language: { eq: $language } }) {
+      eyeCatcher {
+        title
+        image {
+          asset {
+            url
+          }
+        }
+      }
+    }
+  }
+`;
 
-export default async function detailPage({
+// Apollo Client hooks like useQuery cannot be used in server components.
+
+export default function detailPage({
   params: { locale, id },
 }: {
   params: { locale: string; id: number };
 }) {
+  /*
   unstable_setRequestLocale(locale);
   const translation = (
     await import(`../../../../../locales/${locale}/${locale}.json`)
@@ -39,7 +59,7 @@ export default async function detailPage({
   }
   for (let i = 1; i < images.length; i++) {
     newImages.push({ type: "image", content: images[i] });
-  }
+  }*/
 
   return (
     <main>
@@ -47,7 +67,8 @@ export default async function detailPage({
         <div className="bg-darkblue min-h-[calc(100vh-80px)]">
           <div className="container mx-auto md:pt-48 px-8 pt-8 lg:px-4 relative">
             <div className="md:w-2/3 w-full">
-              <h1 className="lg:text-h-l text-h-md text-yellow font-palanquin md:text-left text-center">
+              <h1>asd</h1>
+              {/* <h1 className="lg:text-h-l text-h-md text-yellow font-palanquin md:text-left text-center">
                 {translation.Blog.blogs[id].title}
               </h1>
               <p className="text-white text-h-xs md:text-h-sm mt-4 mb-4 md:text-left text-center font-palanquin !font-thin">
@@ -56,7 +77,7 @@ export default async function detailPage({
             </div>
           </div>
           <div className="container mx-auto py-12 md:mt-12 lg:px-4">
-            <div className="w-full justify-end flex md:p-0 p-8">
+            {/* <div className="w-full justify-end flex md:p-0 p-8">
               <Image
                 src={translation.Blog.blogs[id].images[0]}
                 alt={`Image of ${translation.Blog.blogs[id].title}`}
@@ -64,14 +85,14 @@ export default async function detailPage({
                 width={500}
                 height={300}
               />
-            </div>
+            </div> */}
           </div>
           <ScrollDown />
         </div>
       </div>
       {/* <div className="md:pt-48 md:pb-24" /> */}
       <div className="container mx-auto py-12 md:mt-16 lg:px-4">
-        <div className="flex flex-col">
+        {/* <div className="flex flex-col">
           {Array.from({ length: loopLength }, (_, index) => (
             <div key={index} className="flex flex-col md:flex-row">
               {newText[index] && newText[index].type === "text" && (
@@ -98,8 +119,8 @@ export default async function detailPage({
               )}
             </div>
           ))}
-        </div>
-        {translation.Blog.blogs[id].pdf.title && (
+        </div> */}
+        {/* {translation.Blog.blogs[id].pdf.title && (
           <a
             href={translation.Blog.blogs[id].pdf.document}
             target="_blank"
@@ -108,7 +129,7 @@ export default async function detailPage({
           >
             {translation.Blog.blogs[id].pdf.title}
           </a>
-        )}
+        )} */}
       </div>
     </main>
   );

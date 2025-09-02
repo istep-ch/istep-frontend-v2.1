@@ -116,6 +116,27 @@
 
     "blogs": [
       {
+        "title": "Lernen ohne Computer? Kein Problem.",
+        "text": "iSTEP startet Anschlusskurs in Tiefenau",
+        "moreText": "Mehr Lesen",
+        "date": "02.09.2025",
+        "texts": [
+          "Am vergangenen Samstag fiel der Startschuss für die nächste Phase unseres Projekts in der Kollektivunterkunft Tiefenau. Der Verein iSTEP führt das Engagement im Bereich Digital Literacy (Powercoders) fort und bietet den Teilnehmenden nun ein Anschlussangebot mit vertieften IT-Skills und einem Ausbau der Soft Skills.",
+          "Wie alles begann - Diesen Sommer begleitete iSTEP das Team von Digital Literacy (Powercoders) bei ihrem inspirierenden Angebot. Digital Literacy wird von ehemaligen Asylsuchenden (Absolvent*innen des Powercoders Programms) getragen, die ihre Erfahrungen und Kenntnisse weitergeben. In einem Crashkurs von bis zu acht Samstagnachmittagen vermitteln sie Neuankommenden die wichtigsten digitalen Grundkompetenzen, um sich in der Schweiz zurechtzufinden: Bewerbungen schreiben, eine E-Mail Adresse professionell erstellen, E-Mails verfassen oder an einem Videocall für ein Bewerbungsgespräch teilnehmen. Aus den bisherigen Digital Literacy-Kursen entstand der Wunsch nach einem Aufbauprogramm, das gezielt Absolventinnen anspricht. Viele Teilnehmende wünschten sich nach Abschluss des Basiskurses die Möglichkeit, ihre Kenntnisse zu vertiefen und praktisch anzuwenden. In mehreren Vorbereitungstreffen zwischen iSTEP und dem verantwortlichen Team im Tiefenau wurde das Projekt konkretisiert. Wichtig war dabei den Kurs bewusst als Pilotprojekt für Absolvent*innen des Digital Literacy-Kurses anzulegen. Gleichzeitig sollte der Kurs praxisnah gestaltet sein. Mit Themen wie E-Mail-Kommunikation, Bewerbungsunterlagen, Nutzung von Apps im Alltag, Datenschutz und dem sicheren Umgang mit KI. Auch der kulturelle Austausch, das Knüpfen von Netzwerken in der Schweiz und das gemeinsame Lernen von Deutsch gehören zu den zentralen Zielen. Ein Start ohne Computer – und doch mit viel Inhalt Aufgrund organisatorischer Verzögerungen standen am ersten Kurstag noch keine Computer zur Verfügung. Stattdessen nutzten wir die Gelegenheit, um gemeinsam mit den Teilnehmenden Guidelines für den Kurs zu erarbeiten und Erwartungen abzuklären. Dabei entstand durch Gruppenarbeit nicht nur ein gemeinsames Erlebnis, sondern auch ein reger Austausch: Pünktlichkeit, gegenseitiger Respekt und aktives Mitwirken wurden als zentrale Werte hervorgehoben. Passend dazu erschien tatsächlich ein Teilnehmer bereits pünktlich um 09:00 Uhr startklar im Kursraum – der Rest liess es etwas gemütlicher angehen und trudelte nach und nach ein.",
+          "Ein Höhepunkt war das Rollenspiel, bei dem die Teilnehmenden in die Rolle von Firmenchefs schlüpften. Gemeinsam entschieden sie, welche Werte in ihrem Unternehmen wichtig wären. Dabei wurde schnell klar: Die Prinzipien, die sie dort erarbeiteten, gelten nicht nur für eine Firma, sondern auch für den Kurs und ebenso für ihr späteres Leben in der Schweiz. Werte wie Teamgeist, Respekt und Zuverlässigkeit bilden die Grundlage für gemeinsames Lernen und für eine erfolgreiche Zukunft. Darüber hinaus sammelten wir eine sehr positive Erfahrung beim gemeinsamen Deutschlernen: Über eine zweisprachige PowerPoint-Präsentation wurden Sätze auf Deutsch und Englisch nebeneinander angezeigt. Das half den Teilnehmenden, Wörter zu vergleichen, Zusammenhänge zu erkennen und gleichzeitig Sprachpraxis sowie digitale Kompetenzen zu stärken. Zum Abschluss erhielten alle eine Hausaufgabe, die sie bis zum nächsten Mal vorbereiten sollen. Trotz der fehlenden Technik zeigte sich so, wie wertvoll diese erste Phase ist: Sie ermöglicht den Teilnehmenden, Verantwortung für ihr Lernen zu übernehmen, Inhalte im Alltag zu üben und ein gemeinsames Fundament für die kommenden Wochen zu schaffen.",
+          "Gemeinsam wachsen – unsere nächsten Schritte Ganz im Sinne der iSTEP-Vision, Menschen mit erschwertem Zugang zu Bildung individuell zu fördern und gemeinsam zu wachsen, setzen wir das Projekt am kommenden Samstag fort. Wir werden uns mit dem Thema Lernorganisation befassen. Schritt für Schritt lernen die Teilnehmenden, ihre Lernziele zu strukturieren, Aufgaben zu planen und ihre Fortschritte festzuhalten. Sobald die Computer Mitte September einsatzbereit sind, folgt der praktische Einstieg in LibreOffice: Texte verfassen, Tabellen nutzen und Präsentationen gestalten sowie ein kreativer Zugang zur Programmierung mit Scratch.",
+          "Die Pilotphase läuft bis zum 11. Oktober 2025, in dieser Zeit findet der Kurs wöchentlich statt. Anschliessend werden wir das Projekt sorgfältig auswerten und die gemachten Erfahrungen nutzen, um das Angebot weiterzuentwickeln und nachhaltig zu verankern."
+        ],
+
+        "images": [
+          "/blog/22_Learning_without_a_computer/Bild_1.jpg",
+          "/blog/22_Learning_without_a_computer/Bild_2.jpg",
+          "/blog/22_Learning_without_a_computer/Bild_3.jpg",
+          "/blog/22_Learning_without_a_computer/Bild_4.jpg"
+        ],
+        "pdf": {}
+      },
+      {
         "title": "“Hapur” – offen",
         "text": "Unser Nähatelier ist eingerichtet und offen für begeisterte Teilnehmer. Ja, richtig, wir dürfen diesmal sogar Eri und Marc an der Nähmaschine begrüssen, die voller Konzentration mit dabei sind. Ihr erstes Etui darf sich sehen lassen!",
         "moreText": "Mehr Lesen",

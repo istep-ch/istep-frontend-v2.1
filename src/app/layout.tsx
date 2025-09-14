@@ -1,4 +1,8 @@
+"use client";
+
 import { ReactNode } from "react";
+import { Provider } from "urql";
+import { client } from "../../lib/graphql";
 import "./globals.css";
 type Props = {
   children: ReactNode;
@@ -8,8 +12,10 @@ type Props = {
 // is required, even if it's just passing children through.
 export default function RootLayout({ children }: Props) {
   return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
+    <Provider value={client}>
+      <html lang="en">
+        <body>{children}</body>
+      </html>
+    </Provider>
   );
 }

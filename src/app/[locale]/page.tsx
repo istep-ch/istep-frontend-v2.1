@@ -16,6 +16,7 @@ import ScrollDown from "@/components/general/scrollDown/scrollDown";
 
 import { useTranslations } from "next-intl";
 import { unstable_setRequestLocale } from "next-intl/server";
+import { gql, request } from "graphql-request";
 
 const imagesCourses = [ITImage, MultimediaImage, MSOfficeImage, DiverseKurse];
 
@@ -25,8 +26,37 @@ interface HomeProps {
   };
 }
 
+const endpoint = "https://vercel.saleor.cloud/graphql/";
+
+const fetchProductsListQuery = gql`
+  query FetchProductsList {
+    products(first: 10, channel: "default-channel") {
+      edges {
+        node {
+          id
+          name
+        }
+      }
+    }
+  }
+`;
+
+async function fetchProductsList() {
+  try {
+    const data = await request(endpoint, fetchProductsListQuery);
+    return data.products.edges.map((edge: any) => edge.node);
+  } catch (error) {
+    console.error("GraphQL fetch error:", error);
+    return [];
+  }
+}
+
 export default function HomePage({ params: { locale } }: HomeProps) {
   unstable_setRequestLocale(locale);
+
+  fetchProductsList().then((products) => {
+    console.log("asd", products); // Example usage
+  });
 
   const t = useTranslations("Home");
 

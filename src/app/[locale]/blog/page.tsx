@@ -1,36 +1,76 @@
 import BlogPreview from "@/components/general/blogPreview/blogPreview";
-
 import BlogOverview from "@/components/blog/blogOverview/blogOverview";
-
 import ScrollDown from "@/components/general/scrollDown/scrollDown";
 
-import { useTranslations } from "next-intl";
-import { unstable_setRequestLocale } from "next-intl/server";
-
+import { gql, request } from "graphql-request";
+import { getTranslations } from "next-intl/server";
 interface BlogProps {
   params: {
     locale: string;
   };
 }
 
-export default function Blog({ params: { locale } }: BlogProps) {
-  unstable_setRequestLocale(locale);
-  const t = useTranslations("Blog");
+const endpoint =
+  "https://tqdbr6o1.api.sanity.io/v2023-08-01/graphql/develop/default";
+
+const fetchProductsListQuery = gql`
+  query FetchProductsList($language: String!) {
+    allBlog(where: { language: { eq: $language } }, sort: { date: DESC }) {
+      _id
+      title
+      subtitle
+      date
+      image {
+        asset {
+          url
+        }
+      }
+      namepdf
+      pdf {
+        asset {
+          url
+        }
+      }
+    }
+  }
+`;
+
+async function fetchProductsList(language: string) {
+  try {
+    const data = await request(endpoint, fetchProductsListQuery, { language });
+    return data.allBlog ?? [];
+  } catch (error) {
+    console.error("GraphQL fetch error:", error);
+    return [];
+  }
+}
+
+export default async function Blog({ params }: BlogProps) {
+  const blogs = await fetchProductsList(params.locale);
+
+  const t = await getTranslations("Blog");
 
   return (
     <main>
       <div className="min-h-[calc(100vh-80px)] mt-[80px] md:mt-0 md:min-h-[calc(100vh-0px)] bg-darkblue w-full flex items-center pb-8 md:-pd-0">
         <div className="container mx-auto md:py-24 py-12 px-8 lg:px-4 ">
           <div>
-            <h1 className="lg:text-h-xl text-h-l  text-green font-palanquin md:text-left text-center">
-              {t("title")}
-            </h1>
-            <p className="text-white md:text-h-md text-h-sm !font-thin font-palanquin md:text-left text-center">
-              {t("subTitle")}
-            </p>
+            <div className="mt-6 text-white">
+              <h1 className="lg:text-h-xl text-h-l text-green font-palanquin md:text-left text-center">
+                {t("title")}
+              </h1>
+              <p className="text-white md:text-h-md text-h-sm !font-thin font-palanquin md:text-left text-center">
+                {t("subTitle")}
+              </p>
+            </div>
           </div>
+
           <div className="mt-12">
-            <BlogPreview lng={locale} />
+            <BlogPreview
+              blog={blogs[0]}
+              lng={params.locale}
+              moreText={t("moreText")}
+            />
           </div>
         </div>
         <div className="hidden md:block">
@@ -39,7 +79,11 @@ export default function Blog({ params: { locale } }: BlogProps) {
       </div>
 
       <div className="container mx-auto md:py-24 py-12 px-8 lg:px-4">
-        <BlogOverview lng={locale} />
+        <BlogOverview
+          blogs={blogs}
+          lng={params.locale}
+          moreText={t("moreText")}
+        />
       </div>
     </main>
   );

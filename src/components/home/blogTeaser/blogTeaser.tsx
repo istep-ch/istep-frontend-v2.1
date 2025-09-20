@@ -6,7 +6,7 @@ import { unstable_setRequestLocale } from "next-intl/server";
 
 import { useTranslations } from "next-intl";
 
-export default async function BlogTeaser({ lng }: any) {
+export default async function BlogTeaser({ lng, blog }: any) {
   unstable_setRequestLocale(lng);
   const t = useTranslations("Home.blog");
 
@@ -24,11 +24,10 @@ export default async function BlogTeaser({ lng }: any) {
         />
         <div className="mt-8 ">
           <BlogPreview
-            title={translation.Blog.blogs[0].title}
-            text={translation.Blog.blogs[0].text}
-            moreText={translation.Blog.blogs[0].moreText}
+            blog={blog}
+            moreText={translation.Blog.moreText}
             theme={"#25926F"}
-            image={translation.Blog.blogs[0].images[0]}
+            image={blog.image.asset.url}
             lng={lng}
           />
         </div>

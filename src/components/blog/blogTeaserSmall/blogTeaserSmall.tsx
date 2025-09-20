@@ -1,25 +1,28 @@
 import Image, { StaticImageData as NextImageProps } from "next/image";
 import { truncate } from "@/utils/truncate";
 import Link from "next/link";
+import { convertDate } from "@/utils/convertDate";
 
 interface BlogTeaserSmallProps {
   title: string;
-  text: string;
+  subtitle: string;
   date: string;
   moreText: string;
   idx: number;
   image: string;
   lng: string;
+  id: number;
 }
 
 export default function blogTeaserSmall({
   title,
-  text,
+  subtitle,
   date,
   moreText,
   image,
   idx,
   lng,
+  id,
 }: BlogTeaserSmallProps) {
   const bgColorOptions = ["#E07200", "#F8B344", "#25926F"];
   const bgColorOptions2 = [
@@ -39,7 +42,7 @@ export default function blogTeaserSmall({
   };
   const theme = bgColorOptions[idx % bgColorOptions.length];
 
-  const textBlog = truncate(text, 220);
+  const textBlog = truncate(subtitle, 220);
 
   return (
     <>
@@ -70,8 +73,8 @@ export default function blogTeaserSmall({
             />
             <p className="ml-4">{textBlog}</p>
           </div>
-          <p className="ml-5 mt-1 font-bold">{date}</p>
-          <Link href={`/${lng}/blog/${idx}`}>
+          <p className="ml-5 mt-1 font-bold">{convertDate(date)}</p>
+          <Link href={`/${lng}/blog/${id}`}>
             <button
               type="button"
               className={`rounded-full mt-4 ml-5 px-10 py-2.5 text-sm font-semibold text-white focus-visible:outline hover:scale-105 transition-all duration-300`}

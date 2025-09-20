@@ -1,45 +1,83 @@
 import Image from "next/image";
 import ScrollDown from "@/components/general/scrollDown/scrollDown";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { gql, request } from "graphql-request";
+import { convertDate } from "@/utils/convertDate";
+const endpoint =
+  "https://tqdbr6o1.api.sanity.io/v2023-08-01/graphql/develop/default";
 
-export function generateStaticParams() {
-  const locales = ["de", "en"];
-  const idCount = 10;
+const fetchBlogByIdQuery = gql`
+  query AllBlogs($ID: ID!) {
+    allBlog(where: { _id: { eq: $ID } }) {
+      _id
+      title
+      subtitle
+      date
+      image {
+        asset {
+          url
+        }
+      }
+      namepdf
+      pdf {
+        asset {
+          url
+        }
+      }
+      blogItemTexts {
+        __typename
+        ... on BlogItemText {
+          _key
+          textRaw
+        }
+        ... on BlogItemTextImageLeft {
+          _key
+          textRaw
+          image {
+            asset {
+              url
+            }
+          }
+        }
+        ... on BlogItemTextImageRight {
+          _key
+          textRaw
+          image {
+            asset {
+              url
+            }
+          }
+        }
+        ... on BlogItemImage {
+          _key
 
-  const result: any = [];
-
-  locales.forEach((locale) => {
-    for (let i = 0; i < idCount; i++) {
-      result.push({ locale, id: i.toString() });
+          imageLeft {
+            asset {
+              url
+            }
+          }
+          imageRight {
+            asset {
+              url
+            }
+          }
+        }
+      }
     }
-  });
-
-  return result;
+  }
+`;
+async function fetchBlogById(id: string) {
+  try {
+    const data = await request(endpoint, fetchBlogByIdQuery, { ID: id });
+    return data.allBlog[0];
+  } catch (error) {
+    console.error("GraphQL fetch error:", error);
+    return null;
+  }
 }
 
-export default async function detailPage({
-  params: { locale, id },
-}: {
-  params: { locale: string; id: number };
-}) {
-  unstable_setRequestLocale(locale);
-  const translation = (
-    await import(`../../../../../locales/${locale}/${locale}.json`)
-  ).default;
-
-  const newImages: any = [];
-  const newText: any = [];
-  const images = translation.Blog.blogs[id].images;
-  const texts = translation.Blog.blogs[id].texts;
-
-  const loopLength = Math.max(images.length - 1, texts.length);
-
-  for (let i = 0; i < texts.length; i++) {
-    newText.push({ type: "text", content: texts[i] });
-  }
-  for (let i = 1; i < images.length; i++) {
-    newImages.push({ type: "image", content: images[i] });
-  }
+export default async function detailPage(params: any) {
+  const blog = await fetchBlogById(params.params.id);
+  //console.log("blog", params.params.id);
 
   return (
     <main>
@@ -48,21 +86,23 @@ export default async function detailPage({
           <div className="container mx-auto md:pt-48 px-8 pt-8 lg:px-4 relative">
             <div className="md:w-2/3 w-full">
               <h1 className="lg:text-h-l text-h-md text-yellow font-palanquin md:text-left text-center">
-                {translation.Blog.blogs[id].title}
+                {blog ? blog.title : "Blog not found"}
               </h1>
               <p className="text-white text-h-xs md:text-h-sm mt-4 mb-4 md:text-left text-center font-palanquin !font-thin">
-                {translation.Blog.blogs[id].text}
+                {blog ? blog.subtitle : "Blog not found"}
               </p>
               <p className="text-white text-p-sm  mt-4 mb-4 md:text-left text-center font-palanquin !font-bold">
-                {translation.Blog.blogs[id].date}
+                {/* {translation.Blog.blogs[id].date} */}
+
+                {blog ? convertDate(blog.date) : "Blog not found"}
               </p>
             </div>
           </div>
           <div className="container mx-auto py-12 md:mt-12 lg:px-4">
             <div className="w-full justify-end flex md:p-0 p-8">
               <Image
-                src={translation.Blog.blogs[id].images[0]}
-                alt={`Image of ${translation.Blog.blogs[id].title}`}
+                src={blog?.image?.asset?.url || ""}
+                alt={`Image of ${blog?.title || "Blog not found"}`}
                 className="h-full object-contain md:w-1/2 w-full md:mr-16 z-20 rounded-3xl"
                 width={500}
                 height={300}
@@ -75,34 +115,89 @@ export default async function detailPage({
       {/* <div className="md:pt-48 md:pb-24" /> */}
       <div className="container mx-auto py-12 md:mt-16 lg:px-4">
         <div className="flex flex-col">
-          {Array.from({ length: loopLength }, (_, index) => (
-            <div key={index} className="flex flex-col md:flex-row">
-              {newText[index] && newText[index].type === "text" && (
-                <div
-                  className={`md:w-1/2 w-full p-4 ${
-                    index % 2 === 0 ? "order-last" : "order-first"
-                  }  `}
-                >
-                  <p className="text-p-lg text-darkblue font-palanquin ">
-                    {newText[index].content}
-                  </p>
-                </div>
-              )}
-              {newImages[index] && newImages[index].type === "image" && (
-                <div className="w-full md:w-1/2 p-4">
-                  <Image
-                    src={newImages[index].content}
-                    alt={`image-${index}`}
-                    className=" object-contain z-20 rounded-3xl "
-                    width={500}
-                    height={300}
-                  />
-                </div>
-              )}
-            </div>
-          ))}
+          {blog?.blogItemTexts?.map((item: any, index: number) => {
+            switch (item.__typename) {
+              case "BlogItemText":
+                return (
+                  <div key={item._key} className="flex flex-col md:flex-row">
+                    <div className="w-full p-4">
+                      <p className="text-p-lg text-darkblue font-palanquin">
+                        {item.textRaw?.[0]?.children?.[0]?.text || ""}
+                      </p>
+                    </div>
+                  </div>
+                );
+              case "BlogItemTextImageLeft":
+                return (
+                  <div key={item._key} className="flex flex-col md:flex-row">
+                    <div className="md:w-1/2 w-full p-4 order-last md:order-first">
+                      <p className="text-p-lg text-darkblue font-palanquin">
+                        {item.textRaw?.[0]?.children?.[0]?.text || ""}
+                      </p>
+                    </div>
+                    <div className="md:w-1/2 w-full p-4 order-first md:order-last">
+                      <Image
+                        src={item.image?.asset?.url || ""}
+                        alt={`image-${index}`}
+                        className="object-contain z-20 rounded-3xl"
+                        width={500}
+                        height={300}
+                      />
+                    </div>
+                  </div>
+                );
+              case "BlogItemTextImageRight":
+                return (
+                  <div key={item._key} className="flex flex-col md:flex-row">
+                    <div className="md:w-1/2 w-full p-4">
+                      <Image
+                        src={item.image?.asset?.url || ""}
+                        alt={`image-${index}`}
+                        className="object-contain z-20 rounded-3xl"
+                        width={500}
+                        height={300}
+                      />
+                    </div>
+                    <div className="md:w-1/2 w-full p-4">
+                      <p className="text-p-lg text-darkblue font-palanquin">
+                        {item.textRaw?.[0]?.children?.[0]?.text || ""}
+                      </p>
+                    </div>
+                  </div>
+                );
+              case "BlogItemImage":
+                return (
+                  <div key={item._key} className="flex flex-col md:flex-row">
+                    {item.imageLeft?.asset?.url && (
+                      <div className="md:w-1/2 w-full p-4">
+                        <Image
+                          src={item.imageLeft.asset.url}
+                          alt={`imageLeft-${index}`}
+                          className="object-contain z-20 rounded-3xl"
+                          width={500}
+                          height={300}
+                        />
+                      </div>
+                    )}
+                    {item.imageRight?.asset?.url && (
+                      <div className="md:w-1/2 w-full p-4">
+                        <Image
+                          src={item.imageRight.asset.url}
+                          alt={`imageRight-${index}`}
+                          className="object-contain z-20 rounded-3xl"
+                          width={500}
+                          height={300}
+                        />
+                      </div>
+                    )}
+                  </div>
+                );
+              default:
+                return null;
+            }
+          })}
         </div>
-        {translation.Blog.blogs[id].pdf.title && (
+        {/* {translation.Blog.blogs[id].pdf.title && (
           <a
             href={translation.Blog.blogs[id].pdf.document}
             target="_blank"
@@ -111,7 +206,7 @@ export default async function detailPage({
           >
             {translation.Blog.blogs[id].pdf.title}
           </a>
-        )}
+        )} */}
       </div>
     </main>
   );

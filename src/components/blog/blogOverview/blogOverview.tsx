@@ -1,27 +1,28 @@
-import { unstable_setRequestLocale } from "next-intl/server";
-
 import BlogTeaserSmall from "@/components/blog/blogTeaserSmall/blogTeaserSmall";
 
 interface projectProps {
+  blogs: any[];
   lng: string;
+  moreText: string;
 }
 
-export default async function coursesOverview({ lng }: projectProps) {
-  unstable_setRequestLocale(lng);
-  const translation = (await import(`../../../../locales/${lng}/${lng}.json`))
-    .default;
-
+export default async function coursesOverview({
+  blogs,
+  lng,
+  moreText,
+}: projectProps) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-      {translation.Blog.blogs.slice(1).map((blog: any, index: number) => (
+      {blogs.slice(1).map((blog: any, index: number) => (
         <BlogTeaserSmall
           date={blog.date}
           key={index}
           title={blog.title}
-          text={blog.text}
-          image={blog.images[0]}
-          moreText={blog.moreText}
-          idx={index + 1}
+          subtitle={blog.subtitle}
+          image={blog.image.asset.url}
+          moreText={moreText}
+          id={blog._id}
+          idx={index}
           lng={lng}
         />
       ))}

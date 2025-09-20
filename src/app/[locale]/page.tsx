@@ -12,10 +12,9 @@ import ITImage from "@/assets/general/coursesIcons/IT.png";
 import MultimediaImage from "@/assets/general/coursesIcons/multimedia.png";
 import MSOfficeImage from "@/assets/general/coursesIcons/MS-office.png";
 import DiverseKurse from "@/assets/general/coursesIcons/diverse_kurse.png";
-import ScrollDown from "@/components/general/scrollDown/scrollDown";
 
-import { useTranslations } from "next-intl";
-import { unstable_setRequestLocale } from "next-intl/server";
+import ScrollDown from "@/components/general/scrollDown/scrollDown";
+import { getTranslations } from "next-intl/server";
 import { gql, request } from "graphql-request";
 
 const imagesCourses = [ITImage, MultimediaImage, MSOfficeImage, DiverseKurse];
@@ -26,40 +25,52 @@ interface HomeProps {
   };
 }
 
-const endpoint = "https://vercel.saleor.cloud/graphql/";
+const endpoint =
+  "https://tqdbr6o1.api.sanity.io/v2023-08-01/graphql/develop/default";
 
 const fetchProductsListQuery = gql`
-  query FetchProductsList {
-    products(first: 10, channel: "default-channel") {
-      edges {
-        node {
-          id
-          name
+  query FetchProductsList($language: String!) {
+    allBlog(
+      where: { language: { eq: $language } }
+      sort: { date: DESC }
+      limit: 1
+    ) {
+      _id
+      title
+      subtitle
+      date
+      image {
+        asset {
+          url
+        }
+      }
+      namepdf
+      pdf {
+        asset {
+          url
         }
       }
     }
   }
 `;
 
-async function fetchProductsList() {
+async function fetchProductsList(language: string) {
   try {
-    const data = await request(endpoint, fetchProductsListQuery);
-    return data.products.edges.map((edge: any) => edge.node);
+    const data = await request(endpoint, fetchProductsListQuery, { language });
+    return data.allBlog ?? [];
   } catch (error) {
     console.error("GraphQL fetch error:", error);
     return [];
   }
 }
 
-export default function HomePage({ params: { locale } }: HomeProps) {
-  unstable_setRequestLocale(locale);
+export default async function HomePage({ params }: HomeProps) {
+  const { locale } = params;
 
-  fetchProductsList().then((products) => {
-    console.log("asd", products); // Example usage
-  });
+  const t = await getTranslations("Home");
+  const blogs = await fetchProductsList(locale);
 
-  const t = useTranslations("Home");
-
+  console.log(blogs[0]);
   return (
     <main className="z-10">
       <div className="min-h-[calc(100vh-80px)] md:min-h-[calc(100vh-0px)] bg-darkblue w-full pb-8 md:-pb-0 relative">
@@ -75,13 +86,14 @@ export default function HomePage({ params: { locale } }: HomeProps) {
           <div className="flex justify-center h-3/5 mt-8 md:mt-0">
             <Image
               src={titleImage}
-              alt="Picture of the author"
+              alt="Title"
               className="object-contain pt-2"
             />
           </div>
         </div>
         <ScrollDown />
       </div>
+
       <div className="container mx-auto md:py-24 py-12 px-8 lg:px-4">
         <WhatWeDo lng={locale} />
       </div>
@@ -92,13 +104,13 @@ export default function HomePage({ params: { locale } }: HomeProps) {
         <ContactPersonTeaser lng={locale} />
       </div>
       <div>
-        <CoursesTeaser lng={locale} imagesCourses={imagesCourses as any} />
+        <CoursesTeaser lng={locale} imagesCourses={imagesCourses} />
       </div>
       <div>
         <CourseResultsTeaser lng={locale} />
       </div>
       <div>
-        <BlogTeaser lng={locale} />
+        <BlogTeaser lng={locale} blog={blogs[0]} />
       </div>
     </main>
   );

@@ -1,8 +1,8 @@
-import { unstable_setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 import DigitalSkillsElement from "@/components/ourKnowHow/digitalSkillsElement/digitalSkillsElement";
 
 export default async function DigitalSkills({ lng }: any) {
-  unstable_setRequestLocale(lng);
+  setRequestLocale(lng);
 
   const translation = (await import(`../../../../locales/${lng}/${lng}.json`))
     .default;

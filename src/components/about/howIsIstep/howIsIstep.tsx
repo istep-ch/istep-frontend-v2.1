@@ -2,14 +2,14 @@ import Image from "next/image";
 import howIs from "@/assets/aboutUs/howIs.png";
 
 import { useTranslations } from "next-intl";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 
 interface whoIsProps {
   lng: string;
 }
 
 export default async function howIsIstep({ lng }: whoIsProps) {
-  unstable_setRequestLocale(lng);
+  setRequestLocale(lng);
   const t = useTranslations("About.whoIs");
 
   return (

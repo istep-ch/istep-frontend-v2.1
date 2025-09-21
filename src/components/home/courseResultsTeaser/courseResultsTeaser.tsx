@@ -2,7 +2,7 @@ import TeaserIntroText from "@/components/general/teaserIntroText/teaserIntroTex
 import Carousel from "./carousel/carousel";
 
 import { useTranslations } from "next-intl";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 
 interface courseResultsProps {
   lng: string;
@@ -13,7 +13,7 @@ export default async function CourseResultsTeaser({
   lng,
   idx,
 }: courseResultsProps) {
-  unstable_setRequestLocale(lng);
+  setRequestLocale(lng);
   const t = useTranslations("Home.results");
   const translation = (await import(`../../../../locales/${lng}/${lng}.json`))
     .default;

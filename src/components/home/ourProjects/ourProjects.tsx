@@ -1,7 +1,7 @@
 import Carousel from "./carousel/carousel";
 //import { useTranslation } from "@/app/i18n";$
 
-import { unstable_setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 
 import { useTranslations } from "next-intl";
 
@@ -10,7 +10,7 @@ interface ourProjectsProps {
 }
 
 export default async function OurProjects({ lng }: ourProjectsProps) {
-  unstable_setRequestLocale(lng);
+  setRequestLocale(lng);
   const t = useTranslations("Home.ourProjects");
 
   const projects = (await import(`../../../../locales/${lng}/${lng}.json`))

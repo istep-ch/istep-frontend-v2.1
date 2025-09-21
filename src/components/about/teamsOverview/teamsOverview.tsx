@@ -37,10 +37,10 @@ const imageTeamSwiss = [
 const imageTeamLezha = [ImageIzabela];
 const imageTeamElbasan = [ImageFabjan, ImagePeki];
 
-import { unstable_setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 
 export default async function teamsOverview({ lng }: any) {
-  unstable_setRequestLocale(lng);
+  setRequestLocale(lng);
 
   const translation = (await import(`../../../../locales/${lng}/${lng}.json`))
     .default;

@@ -49,7 +49,6 @@ async function fetchProductsList(language: string) {
 
 export default async function Blog({ params }: BlogProps) {
   const blogs = await fetchProductsList(params.locale);
-  console.log(params.locale);
 
   const t = await getTranslations("Blog");
 

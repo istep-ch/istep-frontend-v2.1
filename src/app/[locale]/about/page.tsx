@@ -8,7 +8,7 @@ import OurValues from "@/components/general/ourValues/ourValues";
 import ScrollDown from "@/components/general/scrollDown/scrollDown";
 
 import { useTranslations } from "next-intl";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 
 interface AboutUsProps {
   params: {
@@ -17,7 +17,7 @@ interface AboutUsProps {
 }
 
 export default function AboutUs({ params: { locale } }: AboutUsProps) {
-  unstable_setRequestLocale(locale);
+  setRequestLocale(locale);
 
   const t = useTranslations("About");
 

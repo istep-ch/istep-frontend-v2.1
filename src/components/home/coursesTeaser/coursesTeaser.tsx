@@ -1,7 +1,7 @@
 import CoursesTeaserElement from "@/components/general/courseTeaserElement/courseTeaserElement";
 
 import { useTranslations } from "next-intl";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 interface ourCoursesProps {
   imagesCourses: [];
   lng: string;
@@ -11,7 +11,7 @@ export default async function CoursesTeaser({
   lng,
   imagesCourses,
 }: ourCoursesProps) {
-  unstable_setRequestLocale(lng);
+  setRequestLocale(lng);
   const t = useTranslations("Home.ourCourses");
   const translation = (await import(`../../../../locales/${lng}/${lng}.json`))
     .default;

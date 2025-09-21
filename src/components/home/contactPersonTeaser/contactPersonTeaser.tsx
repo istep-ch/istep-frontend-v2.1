@@ -3,14 +3,14 @@ import adrian from "@/assets/home/adrian.jpg";
 //import { useTranslation } from "@/app/i18n";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 
 interface contactPersonProps {
   lng: string;
 }
 
 export default async function ContactPersonTeaser({ lng }: contactPersonProps) {
-  unstable_setRequestLocale(lng);
+  setRequestLocale(lng);
   const t = useTranslations("Home.contactPerson");
   const translation = (await import(`../../../../locales/${lng}/${lng}.json`))
     .default;

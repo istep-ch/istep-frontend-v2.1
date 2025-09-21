@@ -1,7 +1,7 @@
 import Filters from "@/components/coursesDetails/filters/filters";
 import CoursePreviewBox from "@/components/coursesDetails/coursePreviewBox/coursePreviewBox";
 
-import { unstable_setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 
 interface projectProps {
   lng: string;
@@ -10,7 +10,7 @@ interface projectProps {
 export default async function coursesOverviewComputerScience({
   lng,
 }: projectProps) {
-  unstable_setRequestLocale(lng);
+  setRequestLocale(lng);
 
   const translation = (await import(`../../../../locales/${lng}/${lng}.json`))
     .default;

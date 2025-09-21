@@ -1,6 +1,6 @@
 import "../globals.css";
 import type { Metadata } from "next";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 
 import { ReactNode } from "react";
 import { notFound } from "next/navigation";
@@ -33,7 +33,7 @@ export default async function RootLayout({
     notFound();
   }
 
-  unstable_setRequestLocale(locale);
+  setRequestLocale(locale);
   const messages = require(`../../../locales/${locale}/${locale}.json`);
 
   return (

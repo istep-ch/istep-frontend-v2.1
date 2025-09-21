@@ -1,7 +1,7 @@
 import ProjectTeaser from "@/components/projects/projectTeaser/projectTeaser";
 import CoursesTeaserElement from "@/components/general/courseTeaserElement/courseTeaserElement";
 
-import { unstable_setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 
 //images
 import ITImage from "@/assets/general/coursesIcons/IT.png";
@@ -16,7 +16,7 @@ interface projectProps {
 }
 
 export default async function coursesOverview({ lng }: projectProps) {
-  unstable_setRequestLocale(lng);
+  setRequestLocale(lng);
   const translation = (await import(`../../../../locales/${lng}/${lng}.json`))
     .default;
 

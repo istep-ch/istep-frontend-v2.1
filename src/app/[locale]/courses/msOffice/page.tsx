@@ -4,7 +4,7 @@ import CoursesOverviewOfficeCourses from "@/components/courses/coursesOverview/c
 import MoreCoursesCarousel from "@/components/general/moreCoursesCarousel/moreCoursesCarousel";
 
 import { useTranslations } from "next-intl";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 
 interface detailCoursePageProps {
   params: {
@@ -15,7 +15,7 @@ interface detailCoursePageProps {
 export default function MSOfficeCourses({
   params: { locale },
 }: detailCoursePageProps) {
-  unstable_setRequestLocale(locale);
+  setRequestLocale(locale);
   const t = useTranslations("OfficeCourses");
 
   return (

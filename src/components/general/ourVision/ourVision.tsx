@@ -4,14 +4,14 @@ import ImageEnable from "@/assets/aboutUs/vision_enable.png";
 import ImageRoom from "@/assets/aboutUs/vision_room.png";
 
 import { useTranslations } from "next-intl";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 
 interface ourVisionProps {
   lng: string;
 }
 
 export default function ourVision({ lng }: ourVisionProps) {
-  unstable_setRequestLocale(lng);
+  setRequestLocale(lng);
 
   const t = useTranslations("About.ourVision");
   return (

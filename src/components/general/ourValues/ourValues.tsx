@@ -5,14 +5,14 @@ import individualitaeteImage from "@/assets/aboutUs/werte-individualitaet.png";
 import nachhaltigImage from "@/assets/aboutUs/werte-nachhaltig.png";
 
 import { useTranslations } from "next-intl";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 
 interface ourValuesProps {
   lng: string;
 }
 
 export default function ourValues({ lng }: ourValuesProps) {
-  unstable_setRequestLocale(lng);
+  setRequestLocale(lng);
 
   const t = useTranslations("About.ourValues");
   return (

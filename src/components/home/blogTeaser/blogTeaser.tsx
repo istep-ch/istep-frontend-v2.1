@@ -2,12 +2,12 @@ import TeaserIntroText from "@/components/general/teaserIntroText/teaserIntroTex
 import BlogPreview from "@/components/general/blogPreview/blogPreview";
 import image from "@/assets/placeholder/project.png";
 import Link from "next/link";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 
 import { useTranslations } from "next-intl";
 
 export default async function BlogTeaser({ lng, blog }: any) {
-  unstable_setRequestLocale(lng);
+  setRequestLocale(lng);
   const t = useTranslations("Home.blog");
 
   const translation = (await import(`../../../../locales/${lng}/${lng}.json`))

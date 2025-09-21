@@ -2,7 +2,7 @@ import Image from "next/image";
 import titleImage from "@/assets/aboutUs/titleImage.png";
 import FormComp from "@/components/contact/form/form";
 import { useTranslations } from "next-intl";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 import ScrollDown from "@/components/general/scrollDown/scrollDown";
 
 interface ContactProps {
@@ -12,7 +12,7 @@ interface ContactProps {
 }
 
 export default function Contact({ params: { locale } }: ContactProps) {
-  unstable_setRequestLocale(locale);
+  setRequestLocale(locale);
   const t = useTranslations("Contact");
 
   return (

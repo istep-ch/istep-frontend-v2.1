@@ -3,10 +3,10 @@ import whatWeDo_1 from "../../../assets/home/whatWeDo_1.png";
 import whatWeDo_2 from "../../../assets/home/whatWeDo_2.png";
 
 import { useTranslations } from "next-intl";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 
 export default function wahtWeDo({ lng }: { lng: string }) {
-  unstable_setRequestLocale(lng);
+  setRequestLocale(lng);
 
   const t = useTranslations("Home.whatWeDo");
   return (

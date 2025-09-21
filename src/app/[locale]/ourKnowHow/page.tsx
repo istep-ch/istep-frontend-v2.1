@@ -3,7 +3,7 @@ import titleImage from "@/assets/ourKnowHow/titleImage.png";
 import ScrollDown from "@/components/general/scrollDown/scrollDown";
 import DigitalSkills from "@/components/ourKnowHow/digitalSkills/digitalSkills";
 
-import { unstable_setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
 import OtherSkills from "@/components/ourKnowHow/otherSkills/otherSkills";
 
@@ -12,7 +12,7 @@ export default function OurKnowHow({
 }: {
   params: { locale: string };
 }) {
-  unstable_setRequestLocale(locale);
+  setRequestLocale(locale);
   const t = useTranslations("OurKnowHow");
 
   return (

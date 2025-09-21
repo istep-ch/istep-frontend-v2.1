@@ -1,14 +1,14 @@
 import Filters from "@/components/coursesDetails/filters/filters";
 import CoursePreviewBox from "@/components/coursesDetails/coursePreviewBox/coursePreviewBox";
 
-import { unstable_setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 
 interface projectProps {
   lng: string;
 }
 
 export default async function coursesOverviewMultimedia({ lng }: projectProps) {
-  unstable_setRequestLocale(lng);
+  setRequestLocale(lng);
 
   const translation = (await import(`../../../../locales/${lng}/${lng}.json`))
     .default;

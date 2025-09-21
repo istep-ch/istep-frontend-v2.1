@@ -1,4 +1,4 @@
-import { unstable_setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 
 export function generateStaticParams() {
   return [
@@ -15,7 +15,7 @@ export default async function detailPage({
 }: {
   params: { locale: string; id: string };
 }) {
-  unstable_setRequestLocale(locale);
+  setRequestLocale(locale);
   const translation = (
     await import(`../../../../../../locales/${locale}/${locale}.json`)
   ).default;

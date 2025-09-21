@@ -1,4 +1,4 @@
-import { unstable_setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
 
 export default function Impressum({
@@ -6,7 +6,7 @@ export default function Impressum({
 }: {
   params: { locale: string };
 }) {
-  unstable_setRequestLocale(locale);
+  setRequestLocale(locale);
   const t = useTranslations("impressum");
   return (
     <main className="container mx-auto md:py-24 py-12 px-8 lg:px-4">

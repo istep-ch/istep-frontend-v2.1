@@ -5,14 +5,14 @@ import CoursesOverview from "@/components/courses/coursesOverview/coursesOvervie
 import ScrollDown from "@/components/general/scrollDown/scrollDown";
 
 import { useTranslations } from "next-intl";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 
 export default function Courses({
   params: { locale },
 }: {
   params: { locale: string };
 }) {
-  unstable_setRequestLocale(locale);
+  setRequestLocale(locale);
   const t = useTranslations("OurCourses");
 
   return (

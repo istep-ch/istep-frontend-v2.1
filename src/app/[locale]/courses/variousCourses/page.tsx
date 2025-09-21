@@ -4,7 +4,7 @@ import CoursesOverviewVariousCourses from "@/components/courses/coursesOverview/
 import MoreCoursesCarousel from "@/components/general/moreCoursesCarousel/moreCoursesCarousel";
 
 import { useTranslations } from "next-intl";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 
 interface detailCoursePageProps {
   params: {
@@ -15,7 +15,7 @@ interface detailCoursePageProps {
 export default function VariousCourses({
   params: { locale },
 }: detailCoursePageProps) {
-  unstable_setRequestLocale(locale);
+  setRequestLocale(locale);
   const t = useTranslations("VariosCourses");
 
   return (

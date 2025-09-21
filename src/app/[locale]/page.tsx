@@ -14,7 +14,7 @@ import MSOfficeImage from "@/assets/general/coursesIcons/MS-office.png";
 import DiverseKurse from "@/assets/general/coursesIcons/diverse_kurse.png";
 
 import ScrollDown from "@/components/general/scrollDown/scrollDown";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { gql, request } from "graphql-request";
 
 const imagesCourses: any = [
@@ -71,13 +71,20 @@ async function fetchProductsList(language: string) {
   }
 }
 
+// 👇 tell Next.js which locales to pre-render
+export function generateStaticParams() {
+  return [{ locale: "en" }, { locale: "de" }, { locale: "fr" }];
+}
+
 export default async function HomePage({ params }: HomeProps) {
   const { locale } = params;
+
+  // 👇 fixes the dynamic rendering issue
+  setRequestLocale(locale);
 
   const t = await getTranslations("Home");
   const blogs = await fetchProductsList(locale);
 
-  console.log(blogs[0]);
   return (
     <main className="z-10">
       <div className="min-h-[calc(100vh-80px)] md:min-h-[calc(100vh-0px)] bg-darkblue w-full pb-8 md:-pb-0 relative">

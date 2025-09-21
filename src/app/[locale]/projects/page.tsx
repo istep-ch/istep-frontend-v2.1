@@ -4,7 +4,7 @@ import ProjectOverview from "@/components/projects/projectOverview/projectOvervi
 import ScrollDown from "@/components/general/scrollDown/scrollDown";
 
 import { useTranslations } from "next-intl";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 
 interface ProjectProps {
   params: {
@@ -13,7 +13,7 @@ interface ProjectProps {
 }
 
 export default function Projects({ params: { locale } }: ProjectProps) {
-  unstable_setRequestLocale(locale);
+  setRequestLocale(locale);
   const t = useTranslations("OurProjects");
 
   return (

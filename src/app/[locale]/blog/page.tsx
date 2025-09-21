@@ -37,7 +37,9 @@ const fetchProductsListQuery = gql`
 
 async function fetchProductsList(language: string) {
   try {
-    const data = await request(endpoint, fetchProductsListQuery, { language });
+    const data: any = await request(endpoint, fetchProductsListQuery, {
+      language,
+    });
     return data.allBlog ?? [];
   } catch (error) {
     console.error("GraphQL fetch error:", error);
@@ -47,6 +49,7 @@ async function fetchProductsList(language: string) {
 
 export default async function Blog({ params }: BlogProps) {
   const blogs = await fetchProductsList(params.locale);
+  console.log(params.locale);
 
   const t = await getTranslations("Blog");
 

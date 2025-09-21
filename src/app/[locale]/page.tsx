@@ -17,7 +17,12 @@ import ScrollDown from "@/components/general/scrollDown/scrollDown";
 import { getTranslations } from "next-intl/server";
 import { gql, request } from "graphql-request";
 
-const imagesCourses = [ITImage, MultimediaImage, MSOfficeImage, DiverseKurse];
+const imagesCourses: any = [
+  ITImage,
+  MultimediaImage,
+  MSOfficeImage,
+  DiverseKurse,
+];
 
 interface HomeProps {
   params: {
@@ -56,7 +61,9 @@ const fetchProductsListQuery = gql`
 
 async function fetchProductsList(language: string) {
   try {
-    const data = await request(endpoint, fetchProductsListQuery, { language });
+    const data: any = await request(endpoint, fetchProductsListQuery, {
+      language,
+    });
     return data.allBlog ?? [];
   } catch (error) {
     console.error("GraphQL fetch error:", error);

@@ -118,6 +118,57 @@
     "moreText": "Read More"
   },
 
+  "Contact": {
+    "title": "Contact Us",
+    "subTitle": "",
+    "form": {
+      "lastname": "Last Name",
+      "firstname": "First Name",
+      "email": "Email",
+      "message": "Message",
+      "subjectText": "What is your inquiry about?",
+
+      "buttonText": "Send"
+    },
+    "formOptions": [
+      "I am interested in a course",
+      "I want to help with a project",
+      "I want to donate",
+      "I have another reason, which I will mention in the message",
+      "I want to sign up for the newsletter"
+    ]
+  },
+  "Courses": [
+    {
+      "title": "IT / Computer Science",
+      "moreText": "Read More",
+      "backgroundColor": "#E07200",
+      "imagePosition": "justify-start",
+      "link": "computerScienceCourses"
+    },
+    {
+      "title": "Multimedia",
+      "moreText": "Read More",
+      "backgroundColor": "#509D75",
+      "imagePosition": "justify-start",
+      "link": "multimedia"
+    },
+    {
+      "title": "MS-Office",
+      "moreText": "Read More",
+      "backgroundColor": "#F8B344",
+      "imagePosition": "justify-start",
+      "link": "msOffice"
+    },
+    {
+      "title": "Diverse Courses",
+      "moreText": "Read More",
+      "backgroundColor": "#E07200",
+      "imagePosition": "justify-start",
+      "link": "variousCourses"
+    }
+  ],
+
   "Donate": {
     "mainTitle": "Donate",
     "donateQR": {

@@ -67,7 +67,7 @@ const fetchBlogByIdQuery = gql`
 `;
 async function fetchBlogById(id: string) {
   try {
-    const data = await request(endpoint, fetchBlogByIdQuery, { ID: id });
+    const data: any = await request(endpoint, fetchBlogByIdQuery, { ID: id });
     return data.allBlog[0];
   } catch (error) {
     console.error("GraphQL fetch error:", error);

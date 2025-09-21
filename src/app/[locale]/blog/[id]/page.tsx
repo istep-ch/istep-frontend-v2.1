@@ -197,16 +197,16 @@ export default async function detailPage(params: any) {
             }
           })}
         </div>
-        {/* {translation.Blog.blogs[id].pdf.title && (
+        {blog.namepdf && (
           <a
-            href={translation.Blog.blogs[id].pdf.document}
+            href={blog.pdf?.asset?.url || "#"}
             target="_blank"
             rel="noopener noreferrer"
             className="text-p-lg text-darkblue font-palanquin font-bold underline mt-8 ml-4"
           >
-            {translation.Blog.blogs[id].pdf.title}
+            {blog.namepdf}
           </a>
-        )} */}
+        )}
       </div>
     </main>
   );

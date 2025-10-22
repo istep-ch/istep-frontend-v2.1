@@ -15,7 +15,7 @@ const endpoint =
 
 const fetchProductsListQuery = gql`
   query FetchProductsList($language: String!) {
-    allBlog(where: { language: { eq: $language } }, sort: { date: DESC }) {
+    allBlog(where: { language: { eq: $language } }) {
       _id
       title
       subtitle
@@ -48,7 +48,10 @@ async function fetchProductsList(language: string) {
 }
 
 export default async function Blog({ params }: BlogProps) {
-  const blogs = await fetchProductsList(params.locale);
+  let blogs = await fetchProductsList(params.locale);
+  blogs = blogs.sort(
+    (a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
 
   const t = await getTranslations("Blog");
 

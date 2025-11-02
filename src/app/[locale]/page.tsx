@@ -73,7 +73,7 @@ async function fetchProductsList(language: string) {
 
 // 👇 tell Next.js which locales to pre-render
 export function generateStaticParams() {
-  return [{ locale: "en" }, { locale: "de" }, { locale: "fr" }];
+  return [{ locale: "en" }, { locale: "de" }];
 }
 
 export default async function HomePage({ params }: HomeProps) {

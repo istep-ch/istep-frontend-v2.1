@@ -14,8 +14,8 @@ import MSOfficeImage from "@/assets/general/coursesIcons/MS-office.png";
 import DiverseKurse from "@/assets/general/coursesIcons/diverse_kurse.png";
 
 import ScrollDown from "@/components/general/scrollDown/scrollDown";
-import { getTranslations, setRequestLocale } from "next-intl/server";
 import { gql, request } from "graphql-request";
+import { getLocale } from "next-intl/server";
 
 const imagesCourses: any = [
   ITImage,
@@ -59,6 +59,104 @@ const fetchProductsListQuery = gql`
   }
 `;
 
+const fetchHomeQuery = gql`
+  query FetchHome($language: String!) {
+    allHome(where: { language: { eq: $language } }) {
+      _id
+      titlePreview {
+        title
+        subtitle
+        image {
+          asset {
+            url
+          }
+        }
+      }
+      whatWeDo {
+        title
+        subtitle
+        text
+        text2
+        image {
+          asset {
+            url
+          }
+        }
+        image2 {
+          asset {
+            url
+          }
+        }
+      }
+      ourProjects {
+        title
+        subtitle
+        moreText
+        projects {
+          text
+          title
+          image {
+            asset {
+              url
+            }
+          }
+        }
+      }
+      contactPerson {
+        title
+        subtitle
+        personTitle
+        personText
+        personEmail
+        personTelephone
+        textButton
+        person {
+          title
+          text
+          image {
+            asset {
+              url
+            }
+          }
+        }
+      }
+      ourCourses {
+        title
+        subtitle
+        text
+        courses {
+          title
+          subtitle
+          image {
+            asset {
+              url
+            }
+          }
+          individualCourse {
+            title
+            text
+            tag
+            courseLocation
+            courseDescriptionBlocks {
+              title
+              textRaw
+            }
+          }
+        }
+      }
+      resultsOverview {
+        title
+        subtitle
+        text
+        results {
+          title
+          subtitle
+        }
+      }
+    }
+  }
+`;
+
 async function fetchProductsList(language: string) {
   try {
     const data: any = await request(endpoint, fetchProductsListQuery, {
@@ -70,20 +168,26 @@ async function fetchProductsList(language: string) {
     return [];
   }
 }
-
-// 👇 tell Next.js which locales to pre-render
-export function generateStaticParams() {
-  return [{ locale: "en" }, { locale: "de" }];
+async function fetchHomeList(language: string) {
+  try {
+    const data: any = await request(endpoint, fetchHomeQuery, {
+      language,
+    });
+    return data.allHome ?? [];
+  } catch (error) {
+    console.error("GraphQL fetch error:", error);
+    return [];
+  }
 }
 
 export default async function HomePage({ params }: HomeProps) {
-  const { locale } = params;
-
-  // 👇 fixes the dynamic rendering issue
-  setRequestLocale(locale);
-
-  const t = await getTranslations("Home");
+  const locale = await getLocale();
   const blogs = await fetchProductsList(locale);
+  const home = await fetchHomeList(locale);
+  //const { locale } = params;
+
+  //const blogs = await fetchProductsList(locale);
+  //const home = await fetchHomeList(locale);
 
   return (
     <main className="z-10">
@@ -91,10 +195,10 @@ export default async function HomePage({ params }: HomeProps) {
         <div className="w-full h-full pt-32 container mx-auto px-8 md:px-0">
           <div className="flex items-center justify-center flex-col h-2/5">
             <h1 className="lg:text-h-xl text-h-l text-yellow font-palanquin text-center">
-              {t("mainTitle")}
+              {home[0]?.titlePreview?.title}
             </h1>
             <h2 className="text-white text-h-xs md:text-h-sm w-full md:w-4/5 lg:w-3/5 mt-4 lg:mt-8 text-center font-palanquin">
-              {t("subTitle")}
+              {home[0]?.titlePreview?.subtitle}
             </h2>
           </div>
           <div className="flex justify-center h-3/5 mt-8 md:mt-0">
@@ -109,23 +213,19 @@ export default async function HomePage({ params }: HomeProps) {
       </div>
 
       <div className="container mx-auto md:py-24 py-12 px-8 lg:px-4">
-        <WhatWeDo lng={locale} />
+        <WhatWeDo whatWeDo={home[0]?.whatWeDo} />
       </div>
       <div>
-        <OurProjects lng={locale} />
+        <OurProjects ourProjects={home[0]?.ourProjects} />
       </div>
       <div className="container mx-auto px-8 lg:px-4">
-        <ContactPersonTeaser lng={locale} />
+        <ContactPersonTeaser contactPerson={home[0]?.contactPerson} />
       </div>
       <div>
-        <CoursesTeaser lng={locale} imagesCourses={imagesCourses} />
+        {/* <CoursesTeaser lng={locale} imagesCourses={imagesCourses} /> */}
       </div>
-      <div>
-        <CourseResultsTeaser lng={locale} />
-      </div>
-      <div>
-        <BlogTeaser lng={locale} blog={blogs[0]} />
-      </div>
+      <div>{/* <CourseResultsTeaser lng={locale} /> */}</div>
+      <div>{/* <BlogTeaser lng={locale} blog={blogs[0]} /> */}</div>
     </main>
   );
 }

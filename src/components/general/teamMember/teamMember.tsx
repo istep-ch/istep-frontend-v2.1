@@ -40,11 +40,11 @@ export default function TeamMember({
         className="relative aspect-[8/9] cursor-pointer  rounded-3xl"
         onClick={() => setOpen(true)}
       >
-        <Image
+        {/* <Image
           src={image}
           alt="Picture of the author"
           className="object-cover h-full rounded-3xl"
-        />
+        /> */}
         <div
           className={`bg-gradient-to-t  h-36 absolute bottom-0 w-full rounded-b-3xl`}
           //@ts-ignore

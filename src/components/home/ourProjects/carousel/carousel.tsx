@@ -9,7 +9,13 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-export default function carousel({ projects }: { projects: any }) {
+export default function carousel({
+  projects,
+  moreText,
+}: {
+  projects: any;
+  moreText: string;
+}) {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -60,7 +66,7 @@ export default function carousel({ projects }: { projects: any }) {
     >
       {projects.map((project: any, index: number) => (
         <SwiperSlide key={index} className={"h-full"}>
-          <ProjectTeaser project={project} idx={index} />
+          <ProjectTeaser project={project} idx={index} moreText={moreText} />
         </SwiperSlide>
       ))}
     </Swiper>

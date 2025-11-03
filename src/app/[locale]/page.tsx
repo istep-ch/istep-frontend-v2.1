@@ -7,21 +7,9 @@ import CoursesTeaser from "@/components/home/coursesTeaser/coursesTeaser";
 import CourseResultsTeaser from "@/components/home/courseResultsTeaser/courseResultsTeaser";
 import BlogTeaser from "@/components/home/blogTeaser/blogTeaser";
 
-// Images
-import ITImage from "@/assets/general/coursesIcons/IT.png";
-import MultimediaImage from "@/assets/general/coursesIcons/multimedia.png";
-import MSOfficeImage from "@/assets/general/coursesIcons/MS-office.png";
-import DiverseKurse from "@/assets/general/coursesIcons/diverse_kurse.png";
-
 import ScrollDown from "@/components/general/scrollDown/scrollDown";
 import { gql, request } from "graphql-request";
 import { getLocale } from "next-intl/server";
-
-interface HomeProps {
-  params: {
-    locale: string;
-  };
-}
 
 const endpoint =
   "https://tqdbr6o1.api.sanity.io/v2023-08-01/graphql/develop/default";
@@ -178,7 +166,7 @@ async function fetchHomeList(language: string) {
   }
 }
 
-export default async function HomePage({ params }: HomeProps) {
+export default async function HomePage({}) {
   const locale = await getLocale();
   const blogs = await fetchProductsList(locale);
   const home = await fetchHomeList(locale);

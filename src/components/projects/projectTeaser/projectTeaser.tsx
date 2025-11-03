@@ -5,16 +5,16 @@ import { usePathname } from "next/navigation";
 
 interface projectProps {
   idx: number;
+  moreText: string;
   project: {
     title: string;
-    teaser: string;
-    moreText: string;
-    link: string;
+    text: string;
+
     image: any;
   };
 }
 
-const projectTeaser = ({ project, idx }: projectProps) => {
+const projectTeaser = ({ project, idx, moreText }: projectProps) => {
   const bgColorOptions = ["#bdded4", "#fce1b4", "#bdded4", "#f3c799"];
   const textColorOptions = ["#24926F", "#F8B343", "#24926F", "#E07200"];
   const bgColorStyle = {
@@ -40,15 +40,15 @@ const projectTeaser = ({ project, idx }: projectProps) => {
             {project.title}
           </h3>
           <p className="text-p-sm md:text-p-lg mb-2 md:mb-4 text-darkblue">
-            {project.teaser}
+            {project.text}
           </p>
           <div className="flex items-center cursor-pointer">
             <hr className="h-0.5 my-4 w-4 border-0 dark:bg-darkblue mr-2" />
             <Link
               className="text-p-sm md:text-p-lg  !font-bold  text-darkblue"
-              href={pathname.substring(0, 3) + "/projects/" + project.link}
+              href={pathname.substring(0, 3) + "/projects/" + project.title}
             >
-              {project.moreText}
+              {moreText}
             </Link>
           </div>
         </div>
@@ -56,7 +56,7 @@ const projectTeaser = ({ project, idx }: projectProps) => {
 
       <div className="w-full md:w-1/2 order-first md:order-last">
         <Image
-          src={project.image}
+          src={project.image.asset.url}
           width={500}
           height={500}
           alt={project.title}

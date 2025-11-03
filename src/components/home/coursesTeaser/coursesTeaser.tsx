@@ -11,7 +11,6 @@ export default async function CoursesTeaser({
     "rgb(248 179 68 / var(--tw-bg-opacity, 1));",
   ];
   const getColor = (idx: number) => {
-    console.log(color[idx % color.length]);
     return color[idx % color.length];
   };
 

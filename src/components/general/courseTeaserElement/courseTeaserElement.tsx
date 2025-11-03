@@ -38,7 +38,9 @@ export default function CoursesTeaserElement({
             <div className={`${imagePosition} flex`}>
               <Image
                 src={image}
-                alt="Picture of the author"
+                alt={title}
+                width={100}
+                height={100}
                 className="object-contain md:w-96 sm:w-48 w-28 aspect-square rounded-3xl max-h-56"
               />
             </div>
@@ -56,7 +58,9 @@ export default function CoursesTeaserElement({
           <div className={`${imagePosition} flex`}>
             <Image
               src={image}
-              alt="Picture of the author"
+              alt={title}
+              width={100}
+              height={100}
               className="object-contain md:w-96 sm:w-48 w-28 aspect-square rounded-3xl max-h-56"
             />
           </div>

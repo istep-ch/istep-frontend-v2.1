@@ -17,13 +17,6 @@ import ScrollDown from "@/components/general/scrollDown/scrollDown";
 import { gql, request } from "graphql-request";
 import { getLocale } from "next-intl/server";
 
-const imagesCourses: any = [
-  ITImage,
-  MultimediaImage,
-  MSOfficeImage,
-  DiverseKurse,
-];
-
 interface HomeProps {
   params: {
     locale: string;
@@ -151,6 +144,11 @@ const fetchHomeQuery = gql`
         results {
           title
           subtitle
+          image {
+            asset {
+              url
+            }
+          }
         }
       }
     }
@@ -184,10 +182,6 @@ export default async function HomePage({ params }: HomeProps) {
   const locale = await getLocale();
   const blogs = await fetchProductsList(locale);
   const home = await fetchHomeList(locale);
-  //const { locale } = params;
-
-  //const blogs = await fetchProductsList(locale);
-  //const home = await fetchHomeList(locale);
 
   return (
     <main className="z-10">
@@ -219,13 +213,23 @@ export default async function HomePage({ params }: HomeProps) {
         <OurProjects ourProjects={home[0]?.ourProjects} />
       </div>
       <div className="container mx-auto px-8 lg:px-4">
-        <ContactPersonTeaser contactPerson={home[0]?.contactPerson} />
+        <ContactPersonTeaser
+          contactPerson={home[0]?.contactPerson}
+          locale={locale}
+        />
       </div>
       <div>
-        {/* <CoursesTeaser lng={locale} imagesCourses={imagesCourses} /> */}
+        <CoursesTeaser locale={locale} ourCourses={home[0]?.ourCourses} />
       </div>
-      <div>{/* <CourseResultsTeaser lng={locale} /> */}</div>
-      <div>{/* <BlogTeaser lng={locale} blog={blogs[0]} /> */}</div>
+      <div>
+        <CourseResultsTeaser
+          resultsOverview={home[0]?.resultsOverview}
+          locale={locale}
+        />
+      </div>
+      <div>
+        <BlogTeaser lng={locale} blog={blogs[0]} />
+      </div>
     </main>
   );
 }

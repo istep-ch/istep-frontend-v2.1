@@ -2,8 +2,8 @@ import Image from "next/image";
 import ScrollDown from "@/components/general/scrollDown/scrollDown";
 import { gql, request } from "graphql-request";
 import { convertDate } from "@/utils/convertDate";
-const endpoint =
-  "https://tqdbr6o1.api.sanity.io/v2023-08-01/graphql/develop/default";
+
+const endpoint = process.env.SANITY_GRAPHQL_ENDPOINT || "";
 
 const fetchBlogByIdQuery = gql`
   query AllBlogs($ID: ID!) {

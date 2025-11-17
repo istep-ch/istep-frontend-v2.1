@@ -4,9 +4,7 @@ import ScrollDown from "@/components/general/scrollDown/scrollDown";
 import { gql, request } from "graphql-request";
 import { getLocale } from "next-intl/server";
 
-const endpoint =
-  "https://tqdbr6o1.api.sanity.io/v2023-08-01/graphql/develop/default";
-
+const endpoint = process.env.SANITY_GRAPHQL_ENDPOINT || "";
 const fetchProjectSite = gql`
   query FetchProjectSite($language: String!) {
     allOurProjectsPage(where: { language: { eq: $language } }) {

@@ -9,9 +9,7 @@ interface BlogProps {
     locale: string;
   };
 }
-
-const endpoint =
-  "https://tqdbr6o1.api.sanity.io/v2023-08-01/graphql/develop/default";
+const endpoint = process.env.SANITY_GRAPHQL_ENDPOINT || "";
 
 const fetchProductsListQuery = gql`
   query FetchProductsList($language: String!) {

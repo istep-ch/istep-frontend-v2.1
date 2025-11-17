@@ -10,8 +10,7 @@ import { getLocale } from "next-intl/server";
 
 import ScrollDown from "@/components/general/scrollDown/scrollDown";
 
-const endpoint =
-  "https://tqdbr6o1.api.sanity.io/v2023-08-01/graphql/develop/default";
+const endpoint = process.env.SANITY_GRAPHQL_ENDPOINT || "";
 
 const fetchAboutPageQuery = gql`
   query FetchAbout($language: String!) {

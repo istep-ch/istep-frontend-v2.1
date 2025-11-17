@@ -37,8 +37,5 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## Architecture
 
-```markdown
-![Logo](/istep-architecture.png)
-```
+<img width="5605" height="5605" alt="istep-architecture drawio" src="https://github.com/user-attachments/assets/f17ae394-0fa1-4255-964e-ba6004690846" />
 
-This will display the image in your markdown file.

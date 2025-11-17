@@ -104,6 +104,8 @@ export default function TeamMember({
                           src={image}
                           alt={name}
                           className="object-cover rounded-rt-3xl rounded-rb-3xl h-full hidden md:flex"
+                          width={400}
+                          height={400}
                         />
                         <div
                           style={{ backgroundColor: hex }}

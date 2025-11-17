@@ -37,6 +37,7 @@ const fetchAboutPageQuery = gql`
       }
       teamOverview {
         teamTitle
+        readMore
         teamMembers {
           title
           text
@@ -122,9 +123,9 @@ export default async function AboutUs({}) {
       <div className="container mx-auto md:py-24 py-12 px-8 lg:px-4">
         <HowIsIstep whoAreWe={aboutData[0]?.whoAreWe} />
       </div>
-      {/* <div className="container mx-auto md:py-24 py-12 px-8 lg:px-4">
-        <TeamsOverview lng={locale} />
-      </div> */}
+      <div className="container mx-auto md:py-24 py-12 px-8 lg:px-4">
+        <TeamsOverview teamOverview={aboutData[0]?.teamOverview} />
+      </div>
       {/* <div>
         <OurVision lng={locale} />
       </div> */}

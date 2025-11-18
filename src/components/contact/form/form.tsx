@@ -2,19 +2,10 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import emailjs from "@emailjs/browser";
-import { setRequestLocale } from "next-intl/server";
 
-interface formProps {
-  lng: string;
-}
-
-export default function from({ lng }: formProps) {
-  const t = useTranslations("Contact.form");
-
+export default function from({ contactData }: any) {
   const [emailSuccess, setEmailSuccess] = useState<boolean | null>(false);
   const [emailFailed, setEmailFailed] = useState<boolean | null>(false);
-
-  const translation = require(`../../../../locales/${lng}/${lng}.json`);
 
   const [userInput, setUserInput] = useState({
     firstName: "",
@@ -87,7 +78,7 @@ export default function from({ lng }: formProps) {
                 htmlFor="firstName"
                 className="block text-sm font-semibold leading-6 text-gray-900"
               >
-                {t("firstname")}
+                {contactData.firstName}
               </label>
               <div className="mt-2.5">
                 <input
@@ -105,7 +96,7 @@ export default function from({ lng }: formProps) {
                 htmlFor="lastName"
                 className="block text-sm font-semibold leading-6 text-gray-900"
               >
-                {t("lastname")}
+                {contactData.lastName}
               </label>
               <div className="mt-2.5">
                 <input
@@ -124,7 +115,7 @@ export default function from({ lng }: formProps) {
                 htmlFor="email"
                 className="block text-sm font-semibold leading-6 text-gray-900"
               >
-                {t("email")}
+                {contactData.email}
               </label>
               <div className="mt-2.5">
                 <input
@@ -144,7 +135,7 @@ export default function from({ lng }: formProps) {
                 htmlFor="message"
                 className="block text-sm font-semibold leading-6 text-gray-900"
               >
-                {t("message")}
+                {contactData.message}
               </label>
               <div className="mt-2.5">
                 <textarea
@@ -159,10 +150,10 @@ export default function from({ lng }: formProps) {
             </div>
             <div className="sm:col-span-2">
               <p className="block text-sm font-semibold leading-6 text-gray-900">
-                {t("subjectText")}
+                {contactData.inquiryType}
               </p>
               <div className="mt-6 space-y-6">
-                {translation.Contact.formOptions.map(
+                {contactData.inquiryOptions.map(
                   (option: string, index: number) => (
                     <div className="flex items-center gap-x-3" key={index}>
                       <input
@@ -189,7 +180,7 @@ export default function from({ lng }: formProps) {
               type="submit"
               className="block w-full rounded-md bg-darkblue px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-darkblue/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
-              {t("buttonText")}
+              {contactData.buttonText}
             </button>
           </div>
           {emailSuccess && (

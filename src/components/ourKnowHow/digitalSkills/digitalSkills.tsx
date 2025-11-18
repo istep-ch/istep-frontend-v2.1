@@ -1,7 +1,6 @@
 import DigitalSkillsElement from "@/components/ourKnowHow/digitalSkillsElement/digitalSkillsElement";
 
 export default async function DigitalSkills({ skillsSection }: any) {
-  console.log("skillsSection", skillsSection.skill);
   return (
     <>
       <div>

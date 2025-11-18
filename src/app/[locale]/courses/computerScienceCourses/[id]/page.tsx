@@ -1,40 +1,62 @@
-import { setRequestLocale } from "next-intl/server";
+import { gql, request } from "graphql-request";
+import { getLocale } from "next-intl/server";
+import { PortableText } from "@portabletext/react";
 
-export function generateStaticParams() {
-  return [
-    { locale: "de", id: "0" },
-    { locale: "de", id: "1" },
+const endpoint = process.env.SANITY_GRAPHQL_ENDPOINT || "";
 
-    { locale: "en", id: "0" },
-    { locale: "en", id: "1" },
-  ];
+const fetchCourseQuery = gql`
+  query FetchCourse($language: String!, $courseTitle: String!) {
+    allIndividualCourse(
+      where: { language: { eq: $language }, title: { eq: $courseTitle } }
+    ) {
+      title
+      text
+      courseLocation
+      tag
+      courseDescriptionBlocks {
+        title
+        textRaw
+      }
+    }
+  }
+`;
+
+async function fetchCourse(language: string, courseTitle: string) {
+  try {
+    const data: any = await request(endpoint, fetchCourseQuery, {
+      language,
+      courseTitle,
+    });
+    return data.allIndividualCourse ?? [];
+  } catch (error) {
+    console.error("GraphQL fetch error:", error);
+    return [];
+  }
 }
 
-export default async function detailPage({
-  params: { locale, id },
-}: {
-  params: { locale: string; id: string };
-}) {
-  setRequestLocale(locale);
-  const translation = (
-    await import(`../../../../../../locales/${locale}/${locale}.json`)
-  ).default;
-  const course = translation.ComputerScienceCourses.courses[id];
+export default async function detailPage({ params }: { params: any }) {
+  const locale = await getLocale();
+
+  const courseId = params.id.replace(/-/g, " ").replace(/%3A/g, ":");
+
+  const course = await fetchCourse(locale, courseId);
+
   return (
     <main className="">
       <div className="bg-darkblue pb-16">
         <div className="container mx-auto md:py-24 py-12 px-8 lg:px-4 ">
           <div className="rounded-full bg-yellow p-2 w-36 text-p-sm text-darkblue font-bold font-palanquin mb-8">
-            <p className="text-center">{course.badge}</p>
+            <p className="text-center">{course[0].tag}</p>
           </div>
           <h3 className="lg:text-h-xl  text-h-l  text-yellow font-palanquin md:text-left text-center mb-4 whitespace-pre-line">
-            {course.title}
+            {course[0].title}
           </h3>
           <p className="text-white max-w-5xl font-palanquin text-p-lg md:text-h-xs">
-            {course.description}
+            {course[0].text}
           </p>
         </div>
       </div>
+
       <div className="container mx-auto md:py-24 py-12 px-8 lg:px-4 font-palanquin">
         <div className="">
           <h4 className="lg:text-h-l  text-h-md  text-darkblue  md:text-left text-center mb-4 whitespace-pre-line">
@@ -44,39 +66,34 @@ export default async function detailPage({
             {course.whatYouLearnText}
           </p>
           <ul className=" list-disc ml-8 text-p-lg md:text-h-xs text-darkblue ">
-            {course.whatYouLearnList.map((item: string, index: number) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
-        </div>
-        <div className="mt-12">
-          <h4 className="lg:text-h-l  text-h-md  text-darkblue  md:text-left text-center mb-4 whitespace-pre-line">
-            {course.workpiecesTitle}
-          </h4>
-
-          <ul className=" list-disc ml-8 text-p-lg md:text-h-xs text-darkblue ">
-            {course.workpiecesList.map((item: string, index: number) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
-        </div>
-        <div className="mt-12">
-          <h4 className="lg:text-h-l  text-h-md  text-darkblue  md:text-left text-center mb-4 whitespace-pre-line">
-            {course.courseOrganizationTitle}
-          </h4>
-          <p className="text-p-lg md:text-h-xs text-darkblue">
-            {course.courseOrganizationText}
-          </p>
-        </div>
-        <div className="mt-12">
-          <h4 className="lg:text-h-l  text-h-md  text-darkblue  md:text-left text-center mb-4 whitespace-pre-line">
-            {course.requirementsTitle}
-          </h4>
-
-          <ul className=" list-disc ml-8 text-p-lg md:text-h-xs text-darkblue ">
-            {course.requirementsList.map((item: string, index: number) => (
-              <li key={index}>{item}</li>
-            ))}
+            {course[0].courseDescriptionBlocks.map(
+              (item: any, index: number) => (
+                <div key={index} className="mb-4">
+                  <h5 className="lg:text-h-l  text-h-md  text-darkblue  md:text-left text-center mb-4 whitespace-pre-line">
+                    {item.title}
+                  </h5>
+                  <PortableText
+                    value={item.textRaw}
+                    components={{
+                      list: ({ children, value }) => {
+                        if (value.listItem === "bullet") {
+                          return <ul className="list-disc pl-5">{children}</ul>;
+                        }
+                        if (value.listItem === "number") {
+                          return (
+                            <ol className="list-decimal pl-5">{children}</ol>
+                          );
+                        }
+                        return <ul className="pl-5">{children}</ul>;
+                      },
+                      listItem: ({ children }) => (
+                        <li className="mb-1">{children}</li>
+                      ),
+                    }}
+                  />
+                </div>
+              )
+            )}
           </ul>
         </div>
       </div>

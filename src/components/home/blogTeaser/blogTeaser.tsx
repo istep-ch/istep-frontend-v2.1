@@ -1,6 +1,6 @@
 import TeaserIntroText from "@/components/general/teaserIntroText/teaserIntroText";
 import BlogPreview from "@/components/general/blogPreview/blogPreview";
-import image from "@/assets/placeholder/project.png";
+
 import Link from "next/link";
 import { setRequestLocale } from "next-intl/server";
 

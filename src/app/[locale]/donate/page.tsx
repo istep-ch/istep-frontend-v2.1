@@ -7,11 +7,6 @@ import DonateTwint from "@/components/donate/donateTwint/donateTwint";
 import DonateRaiseNow from "@/components/donate/donateRaiseNow/donateRaiseNow";
 import DonateBankConnection from "@/components/donate/donateBankConnection/donateBankConnection";
 
-//images
-import ITImage from "@/assets/general/coursesIcons/IT.png";
-import MultimediaImage from "@/assets/general/coursesIcons/multimedia.png";
-import MSOfficeImage from "@/assets/general/coursesIcons/MS-office.png";
-import DiverseKurse from "@/assets/general/coursesIcons/diverse_kurse.png";
 import { useTranslations } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 

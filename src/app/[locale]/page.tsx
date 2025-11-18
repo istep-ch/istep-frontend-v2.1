@@ -1,5 +1,5 @@
 import Image from "next/image";
-import titleImage from "../../assets/home/titleImage.png";
+
 import OurProjects from "@/components/home/ourProjects/ourProjects";
 import WhatWeDo from "@/components/home/whatWeDo/whatWeDo";
 import ContactPersonTeaser from "@/components/home/contactPersonTeaser/contactPersonTeaser";
@@ -184,7 +184,7 @@ export default async function HomePage({}) {
           </div>
           <div className="flex justify-center h-3/5 mt-8 md:mt-0">
             <Image
-              src={titleImage}
+              src={home[0]?.titlePreview?.image?.asset?.url}
               alt="Title"
               className="object-contain pt-2"
             />

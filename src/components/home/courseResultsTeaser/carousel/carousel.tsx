@@ -1,9 +1,6 @@
 "use client";
 
 import CoursesTeaserElement from "@/components/general/courseTeaserElement/courseTeaserElement";
-import VideoImage from "@/assets/general/coursesIcons/video.png";
-import FotographieImage from "@/assets/general/coursesIcons/photography.png";
-import PraesentationImage from "@/assets/general/coursesIcons/presentation.png";
 
 import "swiper/css";
 import "swiper/css/navigation";

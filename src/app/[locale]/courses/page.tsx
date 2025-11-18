@@ -1,5 +1,5 @@
 import Image from "next/image";
-import titleImage from "@/assets/aboutUs/titleImage.png";
+
 import CoursesOverview from "@/components/courses/coursesOverview/coursesOverview";
 
 import ScrollDown from "@/components/general/scrollDown/scrollDown";

@@ -1,13 +1,11 @@
 import Image from "next/image";
-import titleImage from "@/assets/aboutUs/titleImage.png";
+
 import FormComp from "@/components/contact/form/form";
-import { useTranslations } from "next-intl";
-import { setRequestLocale } from "next-intl/server";
+
 import ScrollDown from "@/components/general/scrollDown/scrollDown";
 
 import { gql, request } from "graphql-request";
 import { getLocale } from "next-intl/server";
-import { c } from "@apollo/client/react/internal/compiler-runtime";
 
 const endpoint = process.env.SANITY_GRAPHQL_ENDPOINT || "";
 

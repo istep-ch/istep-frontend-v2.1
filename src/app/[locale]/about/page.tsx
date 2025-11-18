@@ -1,5 +1,5 @@
 import Image from "next/image";
-import titleImage from "@/assets/aboutUs/titleImage.png";
+
 import HowIsIstep from "@/components/about/howIsIstep/howIsIstep";
 import TeamsOverview from "@/components/about/teamsOverview/teamsOverview";
 import OurVision from "@/components/general/ourVision/ourVision";
@@ -107,7 +107,7 @@ export default async function AboutUs({}) {
             </div>
             <div className="lg:w-3/5 w-full flex justify-center">
               <Image
-                src={titleImage}
+                src={aboutData[0]?.titlePreview?.image?.asset?.url}
                 alt="Picture of the author"
                 className="h-108 object-contain "
               />

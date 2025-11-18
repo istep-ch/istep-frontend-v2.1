@@ -61,7 +61,6 @@ const fetchAboutPageQuery = gql`
         }
       }
       ourValues {
-        _id
         title
         visionValuesItems {
           title
@@ -126,12 +125,12 @@ export default async function AboutUs({}) {
       <div className="container mx-auto md:py-24 py-12 px-8 lg:px-4">
         <TeamsOverview teamOverview={aboutData[0]?.teamOverview} />
       </div>
-      {/* <div>
-        <OurVision lng={locale} />
-      </div> */}
-      {/* <div>
-        <OurValues lng={locale} />
-      </div> */}
+      <div>
+        <OurVision ourVision={aboutData[0]?.ourVision} />
+      </div>
+      <div>
+        <OurValues ourValues={aboutData[0]?.ourValues} />
+      </div>
     </main>
   );
 }

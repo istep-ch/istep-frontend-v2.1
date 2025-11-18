@@ -4,7 +4,7 @@ interface VisionValueElementProps {
   theme: string;
   title: string;
   text: string;
-  image: NextImageProps;
+  image: any;
 }
 
 export default function VisionValueElement({
@@ -20,9 +20,11 @@ export default function VisionValueElement({
       >
         <div className={`flex flex-1 justify-center `}>
           <Image
-            src={image}
+            src={image.asset.url}
             alt="Picture of the author"
             className="object-contain md:w-2/5 w-3/5 aspect-square rounded-3xl max-h-56"
+            width={500}
+            height={500}
           />
         </div>
 
